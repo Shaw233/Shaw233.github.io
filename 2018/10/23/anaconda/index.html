@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1conda  info -e 已有环境的信息  1source activate envNmae 激活环境  1which python 查看是那个环境下的python  1conda list 查看当前环境的包 1conda list -n envName 查看指定环境的的包 1conda search numpy 查找包的信息">
+<meta name="description" content="环境命令 1conda  info -e 已有环境的信息  1source activate envNmae 激活环境  1which python 查看是那个环境下的python  1conda list 查看当前环境的包 1conda list -n envName 查看指定环境的的包 1conda search numpy 查找包的信息 2 当找不到要安装的包onda install cv2">
 <meta name="keywords" content="-anaconda">
 <meta property="og:type" content="article">
 <meta property="og:title" content="anaconda 多环境配置">
 <meta property="og:url" content="http://yoursite.com/2018/10/23/anaconda/index.html">
 <meta property="og:site_name" content="ShawShaw">
-<meta property="og:description" content="1conda  info -e 已有环境的信息  1source activate envNmae 激活环境  1which python 查看是那个环境下的python  1conda list 查看当前环境的包 1conda list -n envName 查看指定环境的的包 1conda search numpy 查找包的信息">
+<meta property="og:description" content="环境命令 1conda  info -e 已有环境的信息  1source activate envNmae 激活环境  1which python 查看是那个环境下的python  1conda list 查看当前环境的包 1conda list -n envName 查看指定环境的的包 1conda search numpy 查找包的信息 2 当找不到要安装的包onda install cv2">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-23T06:49:16.273Z">
+<meta property="og:updated_time" content="2019-06-20T11:49:34.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="anaconda 多环境配置">
-<meta name="twitter:description" content="1conda  info -e 已有环境的信息  1source activate envNmae 激活环境  1which python 查看是那个环境下的python  1conda list 查看当前环境的包 1conda list -n envName 查看指定环境的的包 1conda search numpy 查找包的信息">
+<meta name="twitter:description" content="环境命令 1conda  info -e 已有环境的信息  1source activate envNmae 激活环境  1which python 查看是那个环境下的python  1conda list 查看当前环境的包 1conda list -n envName 查看指定环境的的包 1conda search numpy 查找包的信息 2 当找不到要安装的包onda install cv2">
 
 
 
@@ -294,7 +294,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  61
+                  113
                 </span>
               
 
@@ -333,7 +333,7 @@
       
 
       
-        <hr>
+        <h2 id="环境命令"><a href="#环境命令" class="headerlink" title="环境命令"></a>环境命令</h2><hr>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda  info -e</span><br></pre></td></tr></table></figure>
 <p>已有环境的信息</p>
 <hr>
@@ -349,7 +349,13 @@
 <p>查看指定环境的的包</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda search numpy</span><br></pre></td></tr></table></figure>
 <p>查找包的信息</p>
-<hr>
+<h2 id="2-当找不到要安装的包"><a href="#2-当找不到要安装的包" class="headerlink" title="2 当找不到要安装的包"></a>2 当找不到要安装的包</h2><p>onda install cv2<br>Solving environment: failed</p>
+<p>PackagesNotFoundError: The following packages are not available from current channels:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install -c menpo opencv</span><br></pre></td></tr></table></figure>
+<p>install 命令的参数</p>
+<blockquote>
+<p> -c channel 使用附加的channel来索索包</p>
+</blockquote>
 
       
     </div>
@@ -389,6 +395,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/09/python-note/" rel="prev" title="Note_python">
+                Note_python <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -440,8 +450,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -456,7 +475,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -478,7 +497,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
@@ -502,6 +521,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境命令"><span class="nav-number">1.</span> <span class="nav-text">环境命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-当找不到要安装的包"><span class="nav-number">2.</span> <span class="nav-text">2 当找不到要安装的包</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -517,7 +552,7 @@
       <div class="footer-inner">
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
