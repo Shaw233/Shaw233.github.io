@@ -233,6 +233,323 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/22/Note-Zsh/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shaw Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShawShaw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/22/Note-Zsh/" itemprop="url">Note:Zsh</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-22T10:48:16+08:00">
+                2019-06-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  199
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>zsh 使用tips</p>
+<h4 id="zsh没有help"><a href="#zsh没有help" class="headerlink" title="zsh没有help"></a>zsh没有help</h4><p>bash 中 help cat</p>
+<p>zsh 中 cat - <tab></tab></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">☁  <span class="built_in">source</span>  cat -</span><br><span class="line">-b  -- number non-blank output lines</span><br><span class="line">-e  -- display $ at the end of each line (implies -v)</span><br><span class="line">-n  -- number all output lines</span><br><span class="line">-s  -- squeeze multiple blank lines into one</span><br><span class="line">-t  -- display tab as ^I (implies -v)</span><br><span class="line">-u  -- <span class="keyword">do</span> not buffer output</span><br><span class="line">-v  -- display non-printing chars as ^X or M<span class="_">-a</span></span><br></pre></td></tr></table></figure>
+<p>还能双击<tab> </tab></p>
+<h4 id="zsh-目录短语"><a href="#zsh-目录短语" class="headerlink" title="zsh 目录短语"></a>zsh 目录短语</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">☁  <span class="built_in">source</span>  <span class="built_in">alias</span> | grep <span class="built_in">cd</span></span><br><span class="line">-=<span class="string">'cd -'</span></span><br><span class="line">1=<span class="string">'cd -'</span></span><br><span class="line">2=<span class="string">'cd -2'</span></span><br><span class="line">3=<span class="string">'cd -3'</span></span><br><span class="line">4=<span class="string">'cd -4'</span></span><br><span class="line">5=<span class="string">'cd -5'</span></span><br><span class="line">6=<span class="string">'cd -6'</span></span><br><span class="line">7=<span class="string">'cd -7'</span></span><br><span class="line">8=<span class="string">'cd -8'</span></span><br><span class="line">9=<span class="string">'cd -9'</span></span><br></pre></td></tr></table></figure>
+<h4 id="zsh-通配符-找目录下文件"><a href="#zsh-通配符-找目录下文件" class="headerlink" title="zsh 通配符 找目录下文件"></a>zsh 通配符 找目录下文件</h4><blockquote>
+<p>通配符和正则表达式?</p>
+<p>通配符只有shell解析来匹配文件名 比如find ls cp mv</p>
+<p>正则匹配文本, grep</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">☁  _posts  ls *.md</span><br><span class="line">ANN(Approximate Nearest  Neighbor)  Search.md</span><br><span class="line">Markdown-Latex-Signs.md</span><br><span class="line">Note-Japanese-Std.md</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">☁  _posts  grep -E <span class="string">"\&lt;shell\&gt;"</span> Note-Zsh.md</span><br><span class="line">&gt; 通配符只有shell解析来匹配文件名 比如find ls cp mv</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/22/little-photo-album/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shaw Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShawShaw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/22/little-photo-album/" itemprop="url">little_photo_album</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-22T00:21:15+08:00">
+                2019-06-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  0
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/Note-Japanese-Std/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -772,7 +1089,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  602
+                  1.3k
                 </span>
               
 
@@ -788,7 +1105,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  5
                 </span>
               
             </div>
@@ -814,11 +1131,29 @@
         
           
             <!--Linux Note总本 -->
+<!-- 来自 <https://github.com/CyC2018/CS-Notes/blob/master/notes/Linux.md> -->
+<p>#### </p>
 <ol>
-<li>设定: 共用345级标题, 5.1.1 标号 , 暂未定的标号, 用&amp;代替</li>
+<li>设定: 共用345级标题 </li>
 </ol>
-<h3 id="4-Bash"><a href="#4-Bash" class="headerlink" title="4 Bash"></a>4 Bash</h3><h4 id="4-1-特性"><a href="#4-1-特性" class="headerlink" title="4.1 特性"></a>4.1 特性</h4><h3 id="5-文件"><a href="#5-文件" class="headerlink" title="5 文件"></a>5 文件</h3><!-- 来自 <https://github.com/CyC2018/CS-Notes/blob/master/notes/Linux.md> -->
-<h4 id="文件属性"><a href="#文件属性" class="headerlink" title="文件属性"></a>文件属性</h4><p>l 命令查看文件属性</p>
+<h3 id="4-Bash"><a href="#4-Bash" class="headerlink" title="4 Bash"></a>4 Bash</h3><h4 id="4-1-特性"><a href="#4-1-特性" class="headerlink" title="4.1 特性"></a>4.1 特性</h4><h3 id="4-5文件系统"><a href="#4-5文件系统" class="headerlink" title="4.5文件系统"></a>4.5文件系统</h3><h4 id="inode"><a href="#inode" class="headerlink" title="inode"></a>inode</h4><p>inode 具体包含以下信息：</p>
+<ul>
+<li>权限 (read/write/excute)；</li>
+<li>拥有者与群组 (owner/group)；</li>
+<li>容量；</li>
+<li>建立或状态改变的时间 (ctime)；</li>
+<li>最近读取时间 (atime)；</li>
+<li>最近修改时间 (mtime)；</li>
+<li>定义文件特性的旗标 (flag)，如 SetUID…；</li>
+<li>该文件真正内容的指向 (pointer)。</li>
+</ul>
+<p>inode 具有以下特点：</p>
+<ul>
+<li>每个 inode 大小均固定为 128 bytes (新的 ext4 与 xfs 可设定到 256 bytes)；</li>
+<li>每个文件都仅会占用一个 inode。</li>
+</ul>
+<p>inode 中记录了文件内容所在的 block 编号，但是每个 block 非常小，一个大文件随便都需要几十万的 block。而一个 inode 大小有限，无法直接引用这么多 block 编号。因此引入了间接、双间接、三间接引用。间接引用让 inode 记录的引用 block 块记录引用信息。</p>
+<h3 id="5-文件"><a href="#5-文件" class="headerlink" title="5 文件"></a>5 文件</h3><h4 id="文件属性"><a href="#文件属性" class="headerlink" title="文件属性"></a>文件属性</h4><p>l 命令查看文件属性</p>
 <p> <code>-rw-r--r--@ 1 shaw  staff   8.0K Oct 18  2018 .DS_Store</code></p>
 <ul>
 <li>-rw-r--r--@：文件类型以及权限，第 1 位为文件类型字段，后 9 位为文件权限字段</li>
@@ -858,7 +1193,33 @@
 <p>复制文件。如果源文件有两个以上，则目的文件一定要是目录才行。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cp [-adfilprsu] source destination</span><br><span class="line">-a ：相当于 -dr --preserve=all</span><br><span class="line">-d ：若来源文件为链接文件，则复制链接文件属性而非文件本身</span><br><span class="line">-i ：若目标文件已经存在时，在覆盖前会先询问</span><br><span class="line">-p ：连同文件的属性一起复制过去</span><br><span class="line">-r ：递归复制</span><br><span class="line">-u ：destination 比 source 旧才更新 destination，或 destination 不存在的情况下才复制</span><br><span class="line">--preserve=all ：除了 -p 的权限相关参数外，还加入 SELinux 的属性, links, xattr 等也复制了</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>rm</p>
+</li>
+<li><p>mv -f force</p>
+</li>
 </ol>
+<h4 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h4><hr>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># chmod [ugoa]  [+-=] [rwx] dirname/filename</span></span><br><span class="line">- u：拥有者</span><br><span class="line">- g：所属群组</span><br><span class="line">- o：其他人</span><br><span class="line">- a：所有人</span><br><span class="line">- +：添加权限</span><br><span class="line">- -：移除权限</span><br><span class="line">- =：设定权限</span><br></pre></td></tr></table></figure>
+<p>示例：为 .bashrc 文件的所有用户添加写权限。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># chmod a+w .bashrc</span></span><br></pre></td></tr></table></figure>
+<h4 id="文件-目录默认权限"><a href="#文件-目录默认权限" class="headerlink" title="文件/目录默认权限"></a>文件/目录默认权限</h4><hr>
+<ul>
+<li>文件默认无可执行权限, -rw-rw-rw</li>
+<li>目录默认权限, 目录必须要能够进入, 即可执行权限, 777 rwx……</li>
+</ul>
+<h4 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h4><hr>
+<p><img src="/.com//ln.png" alt="ln"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> ln [-sf] source_filename dist_filename</span><br><span class="line">-s ：默认是实体链接，加 -s 为符号链接</span><br><span class="line">-f ：如果目标文件存在时，先删除目标文件</span><br></pre></td></tr></table></figure>
+<h5 id="1实体链接"><a href="#1实体链接" class="headerlink" title="1实体链接"></a>1实体链接</h5><p>在目录下创建一个条目，记录着文件名与 inode 编号，这个 inode 就是源文件的 inode。</p>
+<p>删除任意一个条目，文件还是存在，只要引用数量不为 0。</p>
+<p>有以下限制：不能跨越文件系统、不能对目录进行链接。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">☁  <span class="built_in">source</span>  ln _posts/anaconda.md .</span><br><span class="line">☁  <span class="built_in">source</span>  ll -i _posts/anaconda.md anaconda.md</span><br><span class="line">36774496 -rw-r--r--@ 2 shaw  staff   732B Jun 20 19:49 _posts/anaconda.md</span><br><span class="line">36774496 -rw-r--r--@ 2 shaw  staff   732B Jun 20 19:49 anaconda.md</span><br></pre></td></tr></table></figure>
+<h5 id="2符号链接"><a href="#2符号链接" class="headerlink" title="2符号链接"></a>2符号链接</h5><p>符号链接文件保存着源文件所在的绝对路径，在读取时会定位到源文件上，可以理解为 Windows 的快捷方式。</p>
+<p>当源文件被删除了，链接文件就打不开了。</p>
+<p>因为记录的是路径，所以可以为目录建立符号链接。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">☁  <span class="built_in">source</span>  ln -s _posts/anaconda.md .</span><br><span class="line">☁  <span class="built_in">source</span>  ll -i _posts/anaconda.md anaconda.md</span><br><span class="line">36774496 -rw-r--r--@ 1 shaw  staff   732B Jun 20 19:49 _posts/anaconda.md</span><br><span class="line">36836374 lrwxr-xr-x  1 shaw  staff    18B Jun 22 10:40 anaconda.md -&gt; _posts/anaconda.md</span><br><span class="line">☁  <span class="built_in">source</span></span><br></pre></td></tr></table></figure>
+<h4 id="获取文件内容"><a href="#获取文件内容" class="headerlink" title="获取文件内容"></a>获取文件内容</h4><h5 id="1-cat"><a href="#1-cat" class="headerlink" title="1. cat"></a>1. cat</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">☁  <span class="built_in">source</span>  cat -</span><br><span class="line">-b  -- number non-blank output lines</span><br><span class="line">-e  -- display $ at the end of each line (implies -v)</span><br><span class="line">-n  -- number all output lines</span><br><span class="line">-s  -- squeeze multiple blank lines into one</span><br><span class="line">-t  -- display tab as ^I (implies -v)</span><br><span class="line">-u  -- <span class="keyword">do</span> not buffer output</span><br><span class="line">-v  -- display non-printing chars as ^X or M<span class="_">-a</span></span><br></pre></td></tr></table></figure>
+<p>j</p>
 
           
         
@@ -1769,343 +2130,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/13/python-stack/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shaw Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShawShaw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/13/python-stack/" itemprop="url">Note_python:stack()</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-13T12:07:42+08:00">
-                2019-01-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  263
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="python-numpy-stack-vtack-hstack-笔记"><a href="#python-numpy-stack-vtack-hstack-笔记" class="headerlink" title="python numpy : stack() vtack hstack 笔记"></a>python numpy : stack() vtack hstack 笔记</h3><h4 id="np-stack"><a href="#np-stack" class="headerlink" title="~ np.stack"></a>~ np.stack</h4><p>将同形状的array 组合在一起, 组合的下标可以是默认的 0 轴(第一个下标), 也可以是指定其他在原维度加一的内的值. </p>
-<p>文档中的例子就很直观.<br>Examples</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; arrays = [np.random.randn(3, 4) for _ in range(10)]</span><br><span class="line">&gt;&gt;&gt; np.stack(arrays, axis=0).shape</span><br><span class="line">(10, 3, 4)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; np.stack(arrays, axis=1).shape</span><br><span class="line">(3, 10, 4)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; np.stack(arrays, axis=2).shape</span><br><span class="line">(3, 4, 10)</span><br></pre></td></tr></table></figure>
-<h4 id="np-vstack"><a href="#np-vstack" class="headerlink" title="~ np.vstack"></a>~ np.vstack</h4><p>vertical</p>
-<p>Examples</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = np.array([1, 2, 3])</span><br><span class="line">&gt;&gt;&gt; b = np.array([2, 3, 4])</span><br><span class="line">&gt;&gt;&gt; np.vstack((a,b))</span><br><span class="line">array([[1, 2, 3],</span><br><span class="line">       [2, 3, 4]])</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = np.array([[1], [2], [3]])</span><br><span class="line">&gt;&gt;&gt; b = np.array([[2], [3], [4]])</span><br><span class="line">&gt;&gt;&gt; np.vstack((a,b))</span><br><span class="line">array([[1],</span><br><span class="line">       [2],</span><br><span class="line">       [3],</span><br><span class="line">       [2],</span><br><span class="line">       [3],</span><br><span class="line">       [4]])</span><br></pre></td></tr></table></figure>
-<h4 id="文档中的一句话解释"><a href="#文档中的一句话解释" class="headerlink" title="~ 文档中的一句话解释"></a>~ 文档中的一句话解释</h4><ul>
-<li><p><a href="https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.stack.html#numpy.stack" target="_blank" rel="noopener"><code>stack</code></a></p>
-<p>Join a sequence of arrays along a new axis.</p>
-<p>加个轴把他们组一起</p>
-</li>
-<li><p><a href="https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.hstack.html#numpy.hstack" target="_blank" rel="noopener"><code>hstack</code></a></p>
-<p>Stack arrays in sequence horizontally (column wise).</p>
-<p>横着组</p>
-</li>
-<li><p><a href="https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.dstack.html#numpy.dstack" target="_blank" rel="noopener"><code>dstack</code></a></p>
-<p>Stack arrays in sequence depth wise (along third dimension).</p>
-</li>
-<li><p><a href="https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.concatenate.html#numpy.concatenate" target="_blank" rel="noopener"><code>concatenate</code></a></p>
-<p>Join a sequence of arrays along an existing axis.</p>
-</li>
-<li><p><a href="https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.vsplit.html#numpy.vsplit" target="_blank" rel="noopener"><code>vsplit</code></a></p>
-<p>Split array into a list of multiple sub-arrays vertically.</p>
-</li>
-<li><p><a href="https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.block.html#numpy.block" target="_blank" rel="noopener"><code>block</code></a></p>
-<p>Assemble arrays from blocks.</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/08/Whitening/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shaw Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShawShaw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/08/Whitening/" itemprop="url">Whitening</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-08T20:14:30+08:00">
-                2019-01-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  67
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="基础理解-白化-Whitening"><a href="#基础理解-白化-Whitening" class="headerlink" title="基础理解:白化(Whitening)"></a>基础理解:白化(Whitening)</h2><h4 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识:"></a>前置知识:</h4><p><a href="https://my.oschina.net/findbill/blog/535044" target="_blank" rel="noopener">https://my.oschina.net/findbill/blog/535044</a> 这篇文章把抽象概念去具象的理解,非常生动.</p>
-<h5 id="1-方阵特征值"><a href="#1-方阵特征值" class="headerlink" title="1 方阵特征值"></a>1 方阵特征值</h5><h5 id="2-矩阵奇异值分解-singular-value-decomposition"><a href="#2-矩阵奇异值分解-singular-value-decomposition" class="headerlink" title="2 矩阵奇异值分解(singular value decomposition)"></a>2 矩阵奇异值分解(singular value decomposition)</h5><h5 id="3-主成分分析"><a href="#3-主成分分析" class="headerlink" title="3 主成分分析"></a>3 主成分分析</h5><p><a href="https://my.oschina.net/findbill/blog/543485" target="_blank" rel="noopener">https://my.oschina.net/findbill/blog/543485</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2156,7 +2180,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

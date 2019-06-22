@@ -233,6 +233,343 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/13/python-stack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shaw Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShawShaw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/13/python-stack/" itemprop="url">Note_python:stack()</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-13T12:07:42+08:00">
+                2019-01-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  263
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="python-numpy-stack-vtack-hstack-笔记"><a href="#python-numpy-stack-vtack-hstack-笔记" class="headerlink" title="python numpy : stack() vtack hstack 笔记"></a>python numpy : stack() vtack hstack 笔记</h3><h4 id="np-stack"><a href="#np-stack" class="headerlink" title="~ np.stack"></a>~ np.stack</h4><p>将同形状的array 组合在一起, 组合的下标可以是默认的 0 轴(第一个下标), 也可以是指定其他在原维度加一的内的值. </p>
+<p>文档中的例子就很直观.<br>Examples</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; arrays = [np.random.randn(3, 4) for _ in range(10)]</span><br><span class="line">&gt;&gt;&gt; np.stack(arrays, axis=0).shape</span><br><span class="line">(10, 3, 4)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; np.stack(arrays, axis=1).shape</span><br><span class="line">(3, 10, 4)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; np.stack(arrays, axis=2).shape</span><br><span class="line">(3, 4, 10)</span><br></pre></td></tr></table></figure>
+<h4 id="np-vstack"><a href="#np-vstack" class="headerlink" title="~ np.vstack"></a>~ np.vstack</h4><p>vertical</p>
+<p>Examples</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = np.array([1, 2, 3])</span><br><span class="line">&gt;&gt;&gt; b = np.array([2, 3, 4])</span><br><span class="line">&gt;&gt;&gt; np.vstack((a,b))</span><br><span class="line">array([[1, 2, 3],</span><br><span class="line">       [2, 3, 4]])</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = np.array([[1], [2], [3]])</span><br><span class="line">&gt;&gt;&gt; b = np.array([[2], [3], [4]])</span><br><span class="line">&gt;&gt;&gt; np.vstack((a,b))</span><br><span class="line">array([[1],</span><br><span class="line">       [2],</span><br><span class="line">       [3],</span><br><span class="line">       [2],</span><br><span class="line">       [3],</span><br><span class="line">       [4]])</span><br></pre></td></tr></table></figure>
+<h4 id="文档中的一句话解释"><a href="#文档中的一句话解释" class="headerlink" title="~ 文档中的一句话解释"></a>~ 文档中的一句话解释</h4><ul>
+<li><p><a href="https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.stack.html#numpy.stack" target="_blank" rel="noopener"><code>stack</code></a></p>
+<p>Join a sequence of arrays along a new axis.</p>
+<p>加个轴把他们组一起</p>
+</li>
+<li><p><a href="https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.hstack.html#numpy.hstack" target="_blank" rel="noopener"><code>hstack</code></a></p>
+<p>Stack arrays in sequence horizontally (column wise).</p>
+<p>横着组</p>
+</li>
+<li><p><a href="https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.dstack.html#numpy.dstack" target="_blank" rel="noopener"><code>dstack</code></a></p>
+<p>Stack arrays in sequence depth wise (along third dimension).</p>
+</li>
+<li><p><a href="https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.concatenate.html#numpy.concatenate" target="_blank" rel="noopener"><code>concatenate</code></a></p>
+<p>Join a sequence of arrays along an existing axis.</p>
+</li>
+<li><p><a href="https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.vsplit.html#numpy.vsplit" target="_blank" rel="noopener"><code>vsplit</code></a></p>
+<p>Split array into a list of multiple sub-arrays vertically.</p>
+</li>
+<li><p><a href="https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.block.html#numpy.block" target="_blank" rel="noopener"><code>block</code></a></p>
+<p>Assemble arrays from blocks.</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/08/Whitening/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shaw Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShawShaw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/08/Whitening/" itemprop="url">Whitening</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-08T20:14:30+08:00">
+                2019-01-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  67
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="基础理解-白化-Whitening"><a href="#基础理解-白化-Whitening" class="headerlink" title="基础理解:白化(Whitening)"></a>基础理解:白化(Whitening)</h2><h4 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识:"></a>前置知识:</h4><p><a href="https://my.oschina.net/findbill/blog/535044" target="_blank" rel="noopener">https://my.oschina.net/findbill/blog/535044</a> 这篇文章把抽象概念去具象的理解,非常生动.</p>
+<h5 id="1-方阵特征值"><a href="#1-方阵特征值" class="headerlink" title="1 方阵特征值"></a>1 方阵特征值</h5><h5 id="2-矩阵奇异值分解-singular-value-decomposition"><a href="#2-矩阵奇异值分解-singular-value-decomposition" class="headerlink" title="2 矩阵奇异值分解(singular value decomposition)"></a>2 矩阵奇异值分解(singular value decomposition)</h5><h5 id="3-主成分分析"><a href="#3-主成分分析" class="headerlink" title="3 主成分分析"></a>3 主成分分析</h5><p><a href="https://my.oschina.net/findbill/blog/543485" target="_blank" rel="noopener">https://my.oschina.net/findbill/blog/543485</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/pandas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1687,366 +2024,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/19/README/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shaw Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShawShaw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/19/README/" itemprop="url">README</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-19T15:19:51+08:00">
-                2018-10-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  313
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="博客README"><a href="#博客README" class="headerlink" title="博客README?"></a>博客README?</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h2><blockquote>
-<p>特别菜的一个研究生, 如果论文和轮子都有了, 就去互联网. 如果只有论文, 那就去研究所. 前路未卜, 还想来一句紧张刺激的吃鸡, 还有那台吃灰的PS4和键盘, 还有备受冷漠的dove和fender, 时间像…., 挤一挤都不会有多少 .</p>
-<p>11月12号:  看了大牛的博客,还有最近新鲜感在忙碌中慢慢淡化, 有感 , 发现自己感性与品位在逐渐的退化,  很难再像高中的晨读, 或者本科那会宿舍的一罐啤酒, 加上无关世界的一首歌, 就能把自己感动;  还发现, 有的大牛, 写了很棒的技术博客, 但情感上却像是不问世事, 把自己封闭的孩子(也是自己的选择) , 而有的, 却是在每个他在的每个角落散发着他所坚持的 “酷”.</p>
-<p>也不知道是不是成长伴随的一定是感动消逝  3334455554444444  (忽然发现我这”蝴蝶键盘4这个不好使了, 有延迟…. wtf ???? 大概重启就好了”)  , 开始在Life下 , 写下自己要做的事情, </p>
-</blockquote>
-<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>​    Life</p>
-<p>​    Music</p>
-<p>​    Image Rerieval</p>
-<p>​    Love</p>
-<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p>​    cpp</p>
-<p>​    python</p>
-<p>​    electric guitar</p>
-<p>​    guitar</p>
-<p>​    CBIR</p>
-<p>#### </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/19/VLAD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shaw Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShawShaw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/19/VLAD/" itemprop="url">VLAD</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-19T14:44:48+08:00">
-                2018-10-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Image-Rerieval/" itemprop="url" rel="index">
-                    <span itemprop="name">Image Rerieval</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  336
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="VALD-特征编码"><a href="#VALD-特征编码" class="headerlink" title="VALD 特征编码"></a>VALD 特征编码</h1><h2 id="1-VALD"><a href="#1-VALD" class="headerlink" title="1. VALD"></a>1. VALD</h2><p>特征数据集:</p>
-<p>$X = { x_1, …, x_n }$  每个特征向量$x_i$ 都是d维的向量. </p>
-<ol>
-<li><p>聚类(clustering) :<br>K-means 将n个d维的特征 $x_i \in  R^d , i=1,2,..,n$<br>保存类中心向量 $c = {u_1,…,u_k}$  </p>
-</li>
-<li><p>集成(aggregation):</p>
-<p>求出残差向量 $v^i = \sum \limits_{x:q(x) = u_i }x - u_i$</p>
-<p>得到k个d维子向量.  讲k个子向量拉成一个 $D=k*d$的一维向量</p>
-<p>$v=[v^1,…,v^k] = [ v_1,…,v_D]$  </p>
-</li>
-<li><p>归一化:  (power-law normalization) </p>
-<p>$v_j := |v_j|^a * sign(v_j), j =1, 2, …, D$ 其中 $\alpha \le 1$  </p>
-<p>作用是抑制数值大的数同时提升数值小的数</p>
-<p>$v:= \frac v{||v||}$</p>
-<p>幂律归一化的目的是主要为了减少某些特征出现次数特别多（visual bursts）带来的影响，这是因为出现次数特别多时聚类中心就在它附近，相应的残差就很小;L2范数归一化的目的主要是为了使得特征向量范数为1，使得对特征的比较是在同一个尺度上，比如可以用来减少同一个物体在不同光照下由于光照等因素带来的特征差异。</p>
-<p>在进行特征匹配时，VLAD特征之间的相似性是通过内积来定义，这种相似性受聚类的影响较大。</p>
-<p>原文：<a href="https://blog.csdn.net/CHIERYU/article/details/65441242" target="_blank" rel="noopener">https://blog.csdn.net/CHIERYU/article/details/65441242</a> </p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2097,7 +2074,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

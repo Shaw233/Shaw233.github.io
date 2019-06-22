@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content=",,,,,,,,," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="基础理解:白化(Whitening)前置知识:https://my.oschina.net/findbill/blog/535044 这篇文章把抽象概念去具象的理解,非常生动. 1 方阵特征值2 矩阵奇异值分解(singular value decomposition)3 主成分分析https://my.oschina.net/findbill/blog/543485">
-<meta name="keywords" content="ML AI">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Whitening">
-<meta property="og:url" content="http://yoursite.com/2019/01/08/Whitening/index.html">
+<meta name="description" content="环境命令 1conda  info -e 已有环境的信息  1source activate envNmae 激活环境  1which python 查看是那个环境下的python  1conda list 查看当前环境的包 1conda list -n envName 查看指定环境的的包 1conda search numpy 查找包的信息 2 当找不到要安装的包onda install cv2">
+<meta name="keywords" content="-anaconda">
+<meta property="og:type" content="website">
+<meta property="og:title" content="anaconda 多环境配置">
+<meta property="og:url" content="http://yoursite.com/anaconda.html">
 <meta property="og:site_name" content="ShawShaw">
-<meta property="og:description" content="基础理解:白化(Whitening)前置知识:https://my.oschina.net/findbill/blog/535044 这篇文章把抽象概念去具象的理解,非常生动. 1 方阵特征值2 矩阵奇异值分解(singular value decomposition)3 主成分分析https://my.oschina.net/findbill/blog/543485">
+<meta property="og:description" content="环境命令 1conda  info -e 已有环境的信息  1source activate envNmae 激活环境  1which python 查看是那个环境下的python  1conda list 查看当前环境的包 1conda list -n envName 查看指定环境的的包 1conda search numpy 查找包的信息 2 当找不到要安装的包onda install cv2">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-09T12:50:44.495Z">
+<meta property="og:updated_time" content="2019-06-20T11:49:34.270Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Whitening">
-<meta name="twitter:description" content="基础理解:白化(Whitening)前置知识:https://my.oschina.net/findbill/blog/535044 这篇文章把抽象概念去具象的理解,非常生动. 1 方阵特征值2 矩阵奇异值分解(singular value decomposition)3 主成分分析https://my.oschina.net/findbill/blog/543485">
+<meta name="twitter:title" content="anaconda 多环境配置">
+<meta name="twitter:description" content="环境命令 1conda  info -e 已有环境的信息  1source activate envNmae 激活环境  1which python 查看是那个环境下的python  1conda list 查看当前环境的包 1conda list -n envName 查看指定环境的的包 1conda search numpy 查找包的信息 2 当找不到要安装的包onda install cv2">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/08/Whitening/"/>
+  <link rel="canonical" href="http://yoursite.com/anaconda.html"/>
 
 
 
 
 
-  <title>Whitening | ShawShaw</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>anaconda 多环境配置 | ShawShaw</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -221,176 +221,56 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/08/Whitening/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shaw Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShawShaw">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">Whitening</h1>
-        
+	<h1 class="post-title" itemprop="name headline">anaconda 多环境配置</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-08T20:14:30+08:00">
-                2019-01-08
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  67
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <h2 id="基础理解-白化-Whitening"><a href="#基础理解-白化-Whitening" class="headerlink" title="基础理解:白化(Whitening)"></a>基础理解:白化(Whitening)</h2><h4 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识:"></a>前置知识:</h4><p><a href="https://my.oschina.net/findbill/blog/535044" target="_blank" rel="noopener">https://my.oschina.net/findbill/blog/535044</a> 这篇文章把抽象概念去具象的理解,非常生动.</p>
-<h5 id="1-方阵特征值"><a href="#1-方阵特征值" class="headerlink" title="1 方阵特征值"></a>1 方阵特征值</h5><h5 id="2-矩阵奇异值分解-singular-value-decomposition"><a href="#2-矩阵奇异值分解-singular-value-decomposition" class="headerlink" title="2 矩阵奇异值分解(singular value decomposition)"></a>2 矩阵奇异值分解(singular value decomposition)</h5><h5 id="3-主成分分析"><a href="#3-主成分分析" class="headerlink" title="3 主成分分析"></a>3 主成分分析</h5><p><a href="https://my.oschina.net/findbill/blog/543485" target="_blank" rel="noopener">https://my.oschina.net/findbill/blog/543485</a></p>
+      <div class="post-body">
+        
+        
+          <h2 id="环境命令"><a href="#环境命令" class="headerlink" title="环境命令"></a>环境命令</h2><hr>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda  info -e</span><br></pre></td></tr></table></figure>
+<p>已有环境的信息</p>
+<hr>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source activate envNmae</span><br></pre></td></tr></table></figure>
+<p>激活环境</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">which python</span><br></pre></td></tr></table></figure>
+<p>查看是那个环境下的python</p>
+<hr>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure>
+<p>查看当前环境的包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda list -n envName</span><br></pre></td></tr></table></figure>
+<p>查看指定环境的的包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda search numpy</span><br></pre></td></tr></table></figure>
+<p>查找包的信息</p>
+<h2 id="2-当找不到要安装的包"><a href="#2-当找不到要安装的包" class="headerlink" title="2 当找不到要安装的包"></a>2 当找不到要安装的包</h2><p>onda install cv2<br>Solving environment: failed</p>
+<p>PackagesNotFoundError: The following packages are not available from current channels:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install -c menpo opencv</span><br></pre></td></tr></table></figure>
+<p>install 命令的参数</p>
+<blockquote>
+<p> -c channel 使用附加的channel来索索包</p>
+</blockquote>
 
+        
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/11/20/pandas/" rel="next" title="pandas">
-                <i class="fa fa-chevron-left"></i> pandas
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/13/python-stack/" rel="prev" title="Note_python:stack()">
-                Note_python:stack() <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
@@ -503,7 +383,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础理解-白化-Whitening"><span class="nav-number">1.</span> <span class="nav-text">基础理解:白化(Whitening)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前置知识"><span class="nav-number">1.0.1.</span> <span class="nav-text">前置知识:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-方阵特征值"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">1 方阵特征值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-矩阵奇异值分解-singular-value-decomposition"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">2 矩阵奇异值分解(singular value decomposition)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-主成分分析"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">3 主成分分析</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境命令"><span class="nav-number">1.</span> <span class="nav-text">环境命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-当找不到要安装的包"><span class="nav-number">2.</span> <span class="nav-text">2 当找不到要安装的包</span></a></li></ol></div>
             
 
           </div>
