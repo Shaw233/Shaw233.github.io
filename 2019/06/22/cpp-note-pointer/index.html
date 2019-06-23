@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="pandas," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="timestamp 123p1=pd.Timestamp(2017,6,19)p2=pd.Timestamp(dt(2017,6,19,hour=9,minute=13,second=45))p3=pd.Timestamp(&quot;2017-6-19 9:13:45&quot;)">
-<meta name="keywords" content="pandas">
+<meta name="description" content="指针!!! 指针的值(即地址) int * p = &amp;i; int* (指向int的地址类型) 的变量 p , 其值是i的地址  int a[5],*p=a; p+2 和 (a+2) *的优先级更高  访问a[0] a[2] ,   编译能通过 , 题目错了fk  函数指针char (f1)(char ) 12345char fun(char *);main()&amp;#123;       char">
+<meta name="keywords" content="ML AI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pandas">
-<meta property="og:url" content="http://yoursite.com/2018/11/20/pandas/index.html">
+<meta property="og:title" content="cpp_note_pointer">
+<meta property="og:url" content="http://yoursite.com/2019/06/22/cpp-note-pointer/index.html">
 <meta property="og:site_name" content="ShawShaw">
-<meta property="og:description" content="timestamp 123p1=pd.Timestamp(2017,6,19)p2=pd.Timestamp(dt(2017,6,19,hour=9,minute=13,second=45))p3=pd.Timestamp(&quot;2017-6-19 9:13:45&quot;)">
+<meta property="og:description" content="指针!!! 指针的值(即地址) int * p = &amp;i; int* (指向int的地址类型) 的变量 p , 其值是i的地址  int a[5],*p=a; p+2 和 (a+2) *的优先级更高  访问a[0] a[2] ,   编译能通过 , 题目错了fk  函数指针char (f1)(char ) 12345char fun(char *);main()&amp;#123;       char">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-20T12:55:31.539Z">
+<meta property="og:updated_time" content="2019-06-23T15:57:24.531Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pandas">
-<meta name="twitter:description" content="timestamp 123p1=pd.Timestamp(2017,6,19)p2=pd.Timestamp(dt(2017,6,19,hour=9,minute=13,second=45))p3=pd.Timestamp(&quot;2017-6-19 9:13:45&quot;)">
+<meta name="twitter:title" content="cpp_note_pointer">
+<meta name="twitter:description" content="指针!!! 指针的值(即地址) int * p = &amp;i; int* (指向int的地址类型) 的变量 p , 其值是i的地址  int a[5],*p=a; p+2 和 (a+2) *的优先级更高  访问a[0] a[2] ,   编译能通过 , 题目错了fk  函数指针char (f1)(char ) 12345char fun(char *);main()&amp;#123;       char">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/20/pandas/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/06/22/cpp-note-pointer/"/>
 
 
 
 
 
-  <title>pandas | ShawShaw</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>cpp_note_pointer | ShawShaw</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/pandas/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/22/cpp-note-pointer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shaw Young">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">pandas</h1>
+          <h1 class="post-title" itemprop="name headline">cpp_note_pointer</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-20T20:51:08+08:00">
-                2018-11-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-22T21:34:16+08:00">
+                2019-06-22
               </time>
             
 
@@ -294,7 +294,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  29
+                  114
                 </span>
               
 
@@ -333,8 +333,18 @@
       
 
       
-        <h5 id="timestamp"><a href="#timestamp" class="headerlink" title="timestamp"></a>timestamp</h5><p></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p1=pd.Timestamp(<span class="number">2017</span>,<span class="number">6</span>,<span class="number">19</span>)</span><br><span class="line">p2=pd.Timestamp(dt(<span class="number">2017</span>,<span class="number">6</span>,<span class="number">19</span>,hour=<span class="number">9</span>,minute=<span class="number">13</span>,second=<span class="number">45</span>))</span><br><span class="line">p3=pd.Timestamp(<span class="string">"2017-6-19 9:13:45"</span>)</span><br></pre></td></tr></table></figure>
+        <h3 id="指针"><a href="#指针" class="headerlink" title="指针!!!"></a>指针!!!</h3><hr>
+<p>指针的值(即地址)</p>
+<p>int * p = &i;</p>
+<p>int* (指向int的地址类型) 的变量 p , 其值是i的地址</p>
+<hr>
+<p>int a[5],*p=a;</p>
+<p><em>p+2 和 </em>(a+2)</p>
+<p>*的优先级更高  访问a[0] a[2] ,   编译能通过 , 题目错了fk</p>
+<hr>
+<h5 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h5><p>char (<em>f1)(char </em>)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> <span class="title">fun</span><span class="params">(<span class="keyword">char</span> *)</span></span>;</span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">       <span class="keyword">char</span> *s = <span class="string">"one"</span>, a[<span class="number">5</span>] = &#123;<span class="number">0</span>&#125;, (*f1)(<span class="keyword">char</span> *) = fun, ch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数指针可以 直接用f1(s)  也可以用 (<em>f1)(s) ,但是</em>f1(s)是错误的</p>
 
       
     </div>
@@ -350,12 +360,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/pandas/" rel="tag"># pandas</a>
-          
-        </div>
-      
 
       
       
@@ -365,8 +369,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/12/cpp-note/" rel="next" title="Note_cpp">
-                <i class="fa fa-chevron-left"></i> Note_cpp
+              <a href="/2019/06/22/Udp/" rel="next" title="note_net:tcp and udp">
+                <i class="fa fa-chevron-left"></i> note_net:tcp and udp
               </a>
             
           </div>
@@ -375,8 +379,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/08/Whitening/" rel="prev" title="Whitening">
-                Whitening <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/24/Note-net/" rel="prev" title="Note_net">
+                Note_net <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -509,7 +513,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#timestamp"><span class="nav-number">1.</span> <span class="nav-text">timestamp</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#指针"><span class="nav-number">1.</span> <span class="nav-text">指针!!!</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#函数指针"><span class="nav-number">1.0.1.</span> <span class="nav-text">函数指针</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

@@ -233,6 +233,578 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/20/shell-command/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shaw Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShawShaw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/20/shell-command/" itemprop="url">note_shell-command</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-20T21:20:50+08:00">
+                2018-10-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  118
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-find"><a href="#1-find" class="headerlink" title="1 find"></a>1 find</h4><p>find &lt; path &gt; &lt; expression &gt; &lt; cmd &gt;</p>
+<p>footer.ejs</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name "*.ejs"</span><br></pre></td></tr></table></figure>
+<h5 id="2-path"><a href="#2-path" class="headerlink" title="2 path"></a>2 path</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure>
+<h5 id="3-in-out"><a href="#3-in-out" class="headerlink" title="3 in/out"></a>3 in/out</h5><p>macos获取指令输出到剪贴板</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pwd|pbcopy</span><br></pre></td></tr></table></figure>
+<h5 id="4-pipe"><a href="#4-pipe" class="headerlink" title="4 pipe"></a>4 pipe</h5><p>管道 链接两条指令,前面的out 做后面的in</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pwd|pbcopy</span><br></pre></td></tr></table></figure>
+<h5 id="5-如何卸载protobuf"><a href="#5-如何卸载protobuf" class="headerlink" title="5 如何卸载protobuf"></a>5 如何卸载protobuf</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">在终端执行</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">1. which protoc </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    注：whick protoc后会出现一个路径，一般是 /usr/local/bin/protoc</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    这里默认称 /usr/local/bin/protoc为protoc_path</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2. sudo rm 第一步中protoc_path</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    注：一般是sudo rm /usr/local/bin/protoc</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">即可完成卸载</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/20/h5py/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shaw Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShawShaw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/20/h5py/" itemprop="url">h5py and pys</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-20T16:15:32+08:00">
+                2018-10-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  10
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-h5py"><a href="#1-h5py" class="headerlink" title="1 h5py"></a>1 h5py</h1><blockquote>
+<h4 id="What-is-HDF5"><a href="#What-is-HDF5" class="headerlink" title="What is HDF5"></a>What is HDF5</h4><p>如果你使用 h5py 不需要知道具体HDF5是什么.</p>
+<p>HDF® supports n-dimensional datasets and each element in the dataset may itself be a complex object.</p>
+<p>存放两类对象的容器：dataset(数组)和group(词典)</p>
+<h4 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h4><p>It lets you store huge amounts of numerical data, and easily manipulate that data from NumPy. For example, you can slice into multi-terabyte datasets stored on disk, as if they were real NumPy arrays. Thousands of datasets can be stored in a single file, categorized and tagged however you want.</p>
+<p><a href="http://docs.h5py.org/en/latest/quick.html#quick-start-guide" target="_blank" rel="noopener">Quick Start Guide</a></p>
+</blockquote>
+<h4 id="1-打开文件"><a href="#1-打开文件" class="headerlink" title="1 打开文件"></a>1 打开文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import h5py</span><br><span class="line">&gt;&gt;&gt; f = h5py.File(&apos;mytestfile.hdf5&apos;, &apos;r&apos;)</span><br></pre></td></tr></table></figure>
+<p>就像py的字典 Remember <code>h5py.File</code> acts like a Python dictionary, thus we can check the key</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; list(f.keys())</span><br><span class="line">[&apos;mydataset&apos;]</span><br></pre></td></tr></table></figure>
+<p>获取数据集 Based on our observation, there is one data set, <code>mydataset</code> in the file. Let us examine the data set as a <a href="http://docs.h5py.org/en/latest/high/dataset.html#dataset" target="_blank" rel="noopener">Dataset</a> object</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dset = f[&apos;mydataset&apos;]</span><br></pre></td></tr></table></figure>
+<p>不是一个数组, 而是一个 HDF5数据集, 有形状和数据类型属性, 就像np的数组 The object we obtained isn’t an array, but <a href="http://docs.h5py.org/en/latest/high/dataset.html#dataset" target="_blank" rel="noopener">an HDF5 dataset</a>. Like NumPy arrays, datasets have both a shape and a data type:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dset.shape</span><br><span class="line">(100,)</span><br><span class="line">&gt;&gt;&gt; dset.dtype</span><br><span class="line">dtype(&apos;int32&apos;)</span><br></pre></td></tr></table></figure>
+<p>同样支持数组的下标 They also support array-style slicing. This is how you read and write data from a dataset in the file:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dset[...] = np.arange(100)</span><br><span class="line">&gt;&gt;&gt; dset[0]</span><br><span class="line">0</span><br><span class="line">&gt;&gt;&gt; dset[10]</span><br><span class="line">10</span><br><span class="line">&gt;&gt;&gt; dset[0:100:10]</span><br><span class="line">array([ 0, 10, 20, 30, 40, 50, 60, 70, 80, 90])</span><br></pre></td></tr></table></figure>
+<p>For more, see <a href="http://docs.h5py.org/en/latest/high/file.html#file" target="_blank" rel="noopener">File Objects</a> and <a href="http://docs.h5py.org/en/latest/high/dataset.html#dataset" target="_blank" rel="noopener">Datasets</a>.</p>
+<h4 id="2-创建文件"><a href="#2-创建文件" class="headerlink" title="2 创建文件"></a>2 创建文件</h4><p>At this point, you may wonder how <code>mytestdata.hdf5</code> is created. We can create a file by setting the <code>mode</code> to <code>w</code> when the File object is initialized. Some other modes are <code>a</code> (for read/write/create access), and <code>r+</code> (for read/write access). A full list of file access modes and their meanings is at <a href="http://docs.h5py.org/en/latest/high/file.html#file" target="_blank" rel="noopener">File Objects</a>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import h5py</span><br><span class="line">&gt;&gt;&gt; import numpy as np</span><br><span class="line">&gt;&gt;&gt; f = h5py.File(&quot;mytestfile.hdf5&quot;, &quot;w&quot;)</span><br></pre></td></tr></table></figure>
+<p>The <a href="http://docs.h5py.org/en/latest/high/file.html#file" target="_blank" rel="noopener">File object</a> has a couple of methods which look interesting. One of them is <code>create_dataset</code>, which as the name suggests, creates a data set of given shape and dtype</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dset = f.create_dataset(&quot;mydataset&quot;, (100,), dtype=&apos;i&apos;)</span><br></pre></td></tr></table></figure>
+<p>The File object is a context manager; so the following code works too</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import h5py</span><br><span class="line">&gt;&gt;&gt; import numpy as np</span><br><span class="line">&gt;&gt;&gt; with h5py.File(&quot;mytestfile.hdf5&quot;, &quot;w&quot;) as f:</span><br><span class="line">&gt;&gt;&gt;     dset = f.create_dataset(&quot;mydataset&quot;, (100,), dtype=&apos;i&apos;)</span><br></pre></td></tr></table></figure>
+<h3 id="3-“文件夹”-和-层次地组织-Groups-and-hierarchical-organization"><a href="#3-“文件夹”-和-层次地组织-Groups-and-hierarchical-organization" class="headerlink" title="3 “文件夹” 和 层次地组织 Groups and hierarchical organization"></a>3 “文件夹” 和 层次地组织 Groups and hierarchical organization</h3><p>就像文件系统,层次地组织数据 “HDF” = “Hierarchical Data Format”. Every object in an HDF5 file has a name, and they’re arranged in a POSIX-style hierarchy with <code>/</code>-separators:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dset.name</span><br><span class="line">u&apos;/mydataset&apos;</span><br></pre></td></tr></table></figure>
+<p>文件夹 即所谓的”groups” .  file文件f, 其名字, 即如同根目录. The “folders” in this system are called <a href="http://docs.h5py.org/en/latest/high/group.html#group" target="_blank" rel="noopener">groups</a>. The <code>File</code> object we created is itself a group, in this case the root group, named <code>/</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; f.name</span><br><span class="line">u&apos;/&apos;</span><br></pre></td></tr></table></figure>
+<p>创建子文件夹 Creating a subgroup is accomplished via the aptly-named <code>create_group</code>. But we need to open the file in the “append” mode first (Read/write if exists, create otherwise)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; f = h5py.File(&apos;mydataset.hdf5&apos;, &apos;a&apos;)</span><br><span class="line">&gt;&gt;&gt; grp = f.create_group(&quot;subgroup&quot;)</span><br></pre></td></tr></table></figure>
+<p>创建文件夹/创建文件 . All <code>Group</code> objects also have the <code>create_*</code> methods like File:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dset2 = grp.create_dataset(&quot;another_dataset&quot;, (50,), dtype=&apos;f&apos;)</span><br><span class="line">&gt;&gt;&gt; dset2.name</span><br><span class="line">u&apos;/subgroup/another_dataset&apos;</span><br></pre></td></tr></table></figure>
+<p>还能用绝地地址创建文件 . By the way, you don’t have to create all the intermediate groups manually. Specifying a full path works just fine:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dset3 = f.create_dataset(&apos;subgroup2/dataset_three&apos;, (10,), dtype=&apos;i&apos;)</span><br><span class="line">&gt;&gt;&gt; dset3.name</span><br><span class="line">u&apos;/subgroup2/dataset_three&apos;</span><br></pre></td></tr></table></figure>
+<p>用路径名获取数据(文件) Groups support most of the Python dictionary-style interface. You retrieve objects in the file using the item-retrieval syntax:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dataset_three = f[&apos;subgroup2/dataset_three&apos;]</span><br></pre></td></tr></table></figure>
+<p>Iterating over a group provides the names of its members:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; for name in f:</span><br><span class="line">...     print name</span><br><span class="line">mydataset</span><br><span class="line">subgroup</span><br><span class="line">subgroup2</span><br></pre></td></tr></table></figure>
+<p>Membership testing also uses names:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; &quot;mydataset&quot; in f</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; &quot;somethingelse&quot; in f</span><br><span class="line">False</span><br></pre></td></tr></table></figure>
+<p>You can even use full path names:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; &quot;subgroup/another_dataset&quot; in f</span><br><span class="line">True</span><br></pre></td></tr></table></figure>
+<p>There are also the familiar <code>keys()</code>, <code>values()</code>, <code>items()</code> and <code>iter()</code> methods, as well as <code>get()</code>.</p>
+<p>Since iterating over a group only yields its directly-attached members, iterating over an entire file is accomplished with the <code>Group</code> methods <code>visit()</code> and <code>visititems()</code>, which take a callable:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def printname(name):</span><br><span class="line">...     print name</span><br><span class="line">&gt;&gt;&gt; f.visit(printname)</span><br><span class="line">mydataset</span><br><span class="line">subgroup</span><br><span class="line">subgroup/another_dataset</span><br><span class="line">subgroup2</span><br><span class="line">subgroup2/dataset_three</span><br></pre></td></tr></table></figure>
+<p>For more, see <a href="http://docs.h5py.org/en/latest/high/group.html#group" target="_blank" rel="noopener">Groups</a>.</p>
+<h1 id="2-argparse"><a href="#2-argparse" class="headerlink" title="2 argparse"></a>2 argparse</h1><blockquote>
+<p>python 内置 用于命令行解析. 同类第三方包:docopt / click;</p>
+<p><a href="https://docs.python.org/2/howto/argparse.html" target="_blank" rel="noopener">https://docs.python.org/2/howto/argparse.html</a></p>
+</blockquote>
+<h4 id="概念理解"><a href="#概念理解" class="headerlink" title="概念理解"></a>概念理解</h4><p>场景举例. Let’s show the sort of functionality that we are going to explore in this introductory tutorial by making use of the <strong>ls</strong>command:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ls</span></span><br><span class="line">cpython  devguide  prog.py  pypy  rm-unused-function.patch</span><br><span class="line"><span class="meta">$</span><span class="bash"> ls pypy</span></span><br><span class="line">ctypes_configure  demo  dotviewer  include  lib_pypy  lib-python ...</span><br><span class="line"><span class="meta">$</span><span class="bash"> ls -l</span></span><br><span class="line">total 20</span><br><span class="line">drwxr-xr-x 19 wena wena 4096 Feb 18 18:51 cpython</span><br><span class="line">drwxr-xr-x  4 wena wena 4096 Feb  8 12:04 devguide</span><br><span class="line">-rwxr-xr-x  1 wena wena  535 Feb 19 00:05 prog.py</span><br><span class="line">drwxr-xr-x 14 wena wena 4096 Feb  7 00:59 pypy</span><br><span class="line">-rw-r--r--  1 wena wena  741 Feb 18 01:01 rm-unused-function.patch</span><br><span class="line"><span class="meta">$</span><span class="bash"> ls --<span class="built_in">help</span></span></span><br><span class="line">Usage: ls [OPTION]... [FILE]...</span><br><span class="line">List information about the FILEs (the current directory by default).</span><br><span class="line">Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><p>Let us start with a very simple example which does (almost) nothing:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.parse_args()</span><br></pre></td></tr></table></figure>
+<p>Following is a result of running the code:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> python prog.py</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> python prog.py --<span class="built_in">help</span></span></span><br><span class="line">usage: prog.py [-h]</span><br><span class="line"></span><br><span class="line">optional arguments:</span><br><span class="line">  -h, --help  show this help message and exit</span><br><span class="line"><span class="meta">$</span><span class="bash"> python prog.py --verbose</span></span><br><span class="line">usage: prog.py [-h]</span><br><span class="line">prog.py: error: unrecognized arguments: --verbose</span><br><span class="line"><span class="meta">$</span><span class="bash"> python prog.py foo</span></span><br><span class="line">usage: prog.py [-h]</span><br><span class="line">prog.py: error: unrecognized arguments: foo</span><br></pre></td></tr></table></figure>
+<p>Here is what is happening:</p>
+<ul>
+<li>Running the script without any options results in nothing displayed to stdout. Not so析 The second one starts to display the usefulness of the <a href="https://docs.python.org/2/library/argparse.html#module-argparse" target="_blank" rel="noopener"><code>argparse</code></a> module. We have done almost nothing, but already we get a nice help message.</li>
+<li>简写-h也是默认带的 The <code>--help</code> option, which can also be shortened to <code>-h</code>, is the only option we get for free (i.e. no need to specify it). Specifying anything else results in an error. But even then, we do get a useful usage message, also for free.</li>
+</ul>
+<h4 id="位置定位的参数"><a href="#位置定位的参数" class="headerlink" title="位置定位的参数"></a>位置定位的参数</h4><p>栗子🌰:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(<span class="string">"echo"</span>)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line"><span class="keyword">print</span> args.echo</span><br></pre></td></tr></table></figure>
+<p>运行场景:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> python prog.py</span></span><br><span class="line">usage: prog.py [-h] echo</span><br><span class="line">prog.py: error: the following arguments are required: echo</span><br><span class="line"><span class="meta">$</span><span class="bash"> python prog.py --<span class="built_in">help</span></span></span><br><span class="line">usage: prog.py [-h] echo</span><br><span class="line"></span><br><span class="line">positional arguments:</span><br><span class="line">  echo</span><br><span class="line"></span><br><span class="line">optional arguments:</span><br><span class="line">  -h, --help  show this help message and exit</span><br><span class="line"><span class="meta">$</span><span class="bash"> python prog.py foo</span></span><br><span class="line">foo</span><br></pre></td></tr></table></figure>
+<p>Here is what’s happening: <strong>原以为它需要一个echo参数, foo也可以</strong></p>
+<ul>
+<li><strong>此函数用来指明需要哪个参数</strong>We’ve added the <code>add_argument()</code> method, which is what we use to specify which command-line options the program is willing to accept. In this case, I’ve named it <code>echo</code> so that it’s in line with its function.</li>
+<li>Calling our program now requires us to specify an option.</li>
+<li><strong>返回指明的那个参数 这里返回的是叫echo的</strong>The <code>parse_args()</code> method actually returns some data from the options specified, in this case, <code>echo</code>.</li>
+<li>The variable is some form of ‘magic’ that <a href="https://docs.python.org/2/library/argparse.html#module-argparse" target="_blank" rel="noopener"><code>argparse</code></a>performs for free (i.e. no need to specify which variable that value is stored in). You will also notice that its name matches the string argument given to the method, <code>echo</code>.</li>
+</ul>
+<p><strong>添加更有用的help 比如关于echo是个啥</strong> Note however that, although the help display looks nice and all, it currently is not as helpful as it can be. For example we see that we got <code>echo</code> as a positional argument, but we don’t know what it does, other than by guessing or by reading the source code. So, let’s make it a bit more useful:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import argparse</span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(&quot;echo&quot;, help=&quot;echo the string you use here&quot;)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line">print args.echo</span><br></pre></td></tr></table></figure>
+<p>And we get:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ python prog.py -h</span><br><span class="line">usage: prog.py [-h] echo</span><br><span class="line"></span><br><span class="line">positional arguments:</span><br><span class="line">  echo        echo the string you use here</span><br><span class="line"></span><br><span class="line">optional arguments:</span><br><span class="line">  -h, --help  show this help message and exit</span><br></pre></td></tr></table></figure>
+<p><strong>Now, 上面的实质是个<u>复读机</u></strong>, how about doing something even more useful:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import argparse</span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(&quot;square&quot;, help=&quot;display a square of a given number&quot;)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line">print args.square**2</span><br></pre></td></tr></table></figure>
+<p><strong>这个实质是个平方机</strong>(并不)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ python prog.py 4</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;prog.py&quot;, line 5, in &lt;module&gt;</span><br><span class="line">    print args.square**2</span><br><span class="line">TypeError: unsupported operand type(s) for ** or pow(): &apos;str&apos; and &apos;int&apos;</span><br></pre></td></tr></table></figure>
+<p><strong>默认处理参数为string</strong> That didn’t go so well. That’s because <a href="https://docs.python.org/2/library/argparse.html#module-argparse" target="_blank" rel="noopener"><code>argparse</code></a> treats the options we give it as strings, unless we tell it otherwise. So, let’s tell <a href="https://docs.python.org/2/library/argparse.html#module-argparse" target="_blank" rel="noopener"><code>argparse</code></a> to treat that input as an integer:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import argparse</span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(&quot;square&quot;, help=&quot;display a square of a given number&quot;,</span><br><span class="line">                    type=int)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line">print args.square**2</span><br></pre></td></tr></table></figure>
+<p>Following is a result of running the code:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ python prog.py 4</span><br><span class="line">16</span><br><span class="line">$ python prog.py four</span><br><span class="line">usage: prog.py [-h] square</span><br><span class="line">prog.py: error: argument square: invalid int value: &apos;four&apos;</span><br></pre></td></tr></table></figure>
+<p>That went well. The program now even helpfully quits on bad illegal input before proceeding.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/19/Markdown-Latex-Signs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shaw Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShawShaw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/19/Markdown-Latex-Signs/" itemprop="url">Markdown-Latex-Signs</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-19T19:13:30+08:00">
+                2018-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/测试分类/" itemprop="url" rel="index">
+                    <span itemprop="name">测试分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  24
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-符号的底部-符号的顶部"><a href="#1-符号的底部-符号的顶部" class="headerlink" title="1 符号的底部/符号的顶部"></a>1 符号的底部/符号的顶部</h3><p>$v^i = \sum \limits_{x:q(x) = u_i }^{up}x - u_i$</p>
+<p>\limits_{}^{up}</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/19/README/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -772,159 +1344,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/16/test-my-site/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shaw Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShawShaw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/16/test-my-site/" itemprop="url">test_my_site</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-16T02:12:05+08:00">
-                2018-10-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  1
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>hexo_test</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/16/ANN(Approximate Nearest  Neighbor)  Search/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1120,6 +1539,159 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/16/test-my-site/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shaw Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShawShaw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/16/test-my-site/" itemprop="url">test_my_site</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-16T02:12:05+08:00">
+                2018-10-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>hexo_test</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1170,7 +1742,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

@@ -233,6 +233,553 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/cpp-inheritance/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shaw Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShawShaw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/18/cpp-inheritance/" itemprop="url">Note_cpp:inherance继承</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-18T21:12:10+08:00">
+                2019-06-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://blog.csdn.net/weicao1990/article/details/81842411" target="_blank" rel="noopener">https://blog.csdn.net/weicao1990/article/details/81842411</a></p>
+<h3 id="1-继承方式"><a href="#1-继承方式" class="headerlink" title="#1 继承方式"></a>#1 继承方式</h3><ol>
+<li><p><strong>共有继承</strong><br>基类的公有和保护成员 作为派生类的成员 时,保持不变, 而私有成员是私有的, 不能被派生的子类所访问</p>
+</li>
+<li><p><strong>私有继承(实现)</strong></p>
+<p>基类的公有和保护成员 作为派生类的私有成员, 不能被这个派生类的子类访问</p>
+</li>
+<li><p><strong>保护继承</strong></p>
+<p>………., 只能被它的派生类成员函数, 或 友员访问, </p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>此表不准</th>
+<th>内部(m函数)</th>
+<th>子类</th>
+<th>外部(对象</th>
+<th>友元</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>ok</td>
+<td>ok</td>
+<td>ok</td>
+<td>ok</td>
+</tr>
+<tr>
+<td></td>
+<td>ok</td>
+<td>ok</td>
+<td>no</td>
+<td>ok</td>
+</tr>
+<tr>
+<td>private</td>
+<td>ok</td>
+<td>no</td>
+<td>no</td>
+<td>ok</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-private-protect-成员的访问属性"><a href="#2-private-protect-成员的访问属性" class="headerlink" title="#2 private protect 成员的访问属性"></a>#2 private protect 成员的访问属性</h3><ol>
+<li>private 理解是 对于继承关系private, 是自己的, 派生的不可访问 , 但是是存在的;</li>
+</ol>
+<p>但是, 可以通过基类的接口,  继承的也可以,  保护 或公有的.</p>
+<p>​    </p>
+<ol start="2">
+<li>protect 理解是对于, 类成员函数 访问, 与 对象访问</li>
+</ol>
+<h3 id="3-代码例子"><a href="#3-代码例子" class="headerlink" title="#3 代码例子"></a>#3 代码例子</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span>    //父类</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">   <span class="keyword">private</span>: </span><br><span class="line">       <span class="keyword">int</span> _priB;</span><br><span class="line">   <span class="keyword">protected</span>:</span><br><span class="line">       <span class="keyword">int</span> _proB;</span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">       <span class="keyword">int</span> _pubB;</span><br><span class="line">&#125; ;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Derived</span>:</span> <span class="keyword">public</span> Base    <span class="comment">//子类，继承自base,继承类型为公有继承</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">      <span class="keyword">int</span> _d_pri;</span><br><span class="line">   <span class="keyword">protected</span>:</span><br><span class="line">      <span class="keyword">int</span> _d_pro;</span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">       <span class="function"><span class="keyword">void</span> <span class="title">funct</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> d;</span><br><span class="line">        d=_priB;       <span class="comment">//error：基类中私有成员在派生类中是不可见的</span></span><br><span class="line">        d=_proB;       <span class="comment">//ok： 基类的保护成员在派生类中为保护成员</span></span><br><span class="line">        d=_pubB;       <span class="comment">//ok： 基类的公共成员在派生类中为公共成员</span></span><br><span class="line">    &#125;</span><br><span class="line">      <span class="keyword">int</span> _d_pub;</span><br><span class="line">&#125; ;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//总结：（1）. public继承是一个接口继承，保持is-a原则，每个父类可用的成员对子类也可用， 因为每个子类对象也都是一个父类对象。</span></span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> :</span><span class="keyword">private</span> Base    <span class="comment">//基类Base的派生类C（私有继承）</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">funct</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> c;</span><br><span class="line">        c=_priB;      <span class="comment">//error：基类中私有成员在派生类中是不可见的</span></span><br><span class="line">        c=_proB;      <span class="comment">//ok：基类的保护成员在派生类中为私有成员</span></span><br><span class="line">        c=_pubB;      <span class="comment">//ok：基类的公共成员在派生类中为私有成员</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">E</span> :</span><span class="keyword">protected</span> Base   <span class="comment">//基类Base的派生类E（保护继承）</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">funct</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> e ;</span><br><span class="line">        e=_priB;    <span class="comment">//error：基类中私有成员在派生类中是不可见的</span></span><br><span class="line">        e=_proB;    <span class="comment">//ok：基类的保护成员在派生类中为保护成员</span></span><br><span class="line">        e=_pubB;    <span class="comment">//ok：基类的公共成员在派生类中为保护成员</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//总结：</span></span><br><span class="line"><span class="comment">//（2）. 基类的private成员 在派生类中是不能被访问的， 如果基类成员 不想在类外直接被访问， 但需要 在派生类中能访问， 就定义为protected。 可以看出保护成员 限定符是因继承才出现的。</span></span><br><span class="line"><span class="comment">//（3）. protected/private继承是一个实现继承， 基类的部分成员 并非完全成为子类接口 的一部分， 是 has-a 的关系原则， 所以非特殊情况下不会使用这两种继承关系， 在绝大多数的场景下使用的 都是公有继承。 私有继承以为这is-implemented-in-terms-of(是根据……实现的) 。 通常比组合(composition) 更低级， 但当一个派生类需要访问 基类保护成员 或需要重定义基类的虚函数时它就是合理的。</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a; </span><br><span class="line">    D d;</span><br><span class="line">    a=D._priB;     <span class="comment">//error：公有继承基类中私有成员在派生类中是不可见的,对对象不可见</span></span><br><span class="line">    a=D._proB;     <span class="comment">//error：公有继承基类的保护成员在派生类中为保护成员，对对象不可见</span></span><br><span class="line">    a=D._pubB;     <span class="comment">//ok：公有继承基类的公共成员在派生类中为公共成员，对对象可见</span></span><br><span class="line">    C c;</span><br><span class="line">    a=c._priB;    <span class="comment">//error：私有继承基类中私有成员在派生类中是不可见的, 对对象不可见</span></span><br><span class="line">    a=c._proB;    <span class="comment">//error：私有继承基类的保护成员在派生类中为私有成员，对对象不可见</span></span><br><span class="line">    a=c._pubB;    <span class="comment">//error：私有继承基类的公共成员在派生类中为私有成员，对对象不可见</span></span><br><span class="line">    E e;</span><br><span class="line">    a=e._priB;    <span class="comment">//error：保护继承基类中私有成员在派生类中是不可见的, 对对象不可见</span></span><br><span class="line">    a=e._proB;    <span class="comment">//error：保护继承基类的保护成员在派生类中为保护成员，对对象不可见</span></span><br><span class="line">    a=e._pubB;    <span class="comment">//error：保护继承基类的公共成员在派生类中为保护成员，对对象不可见</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>公用（public）：访问权限最高；除派生类外，外部函数也可以直接访问（无论是成员变量还是成员函数）。<br>私有（private）：访问权限最低；只能是该类内部函数互相调用，派生类、外部函数都不能访问。<br>保护（protect）：访问权限中间；该类内部函数、派生类都能访问，外部类、外部函数不能访问  </p>
+<p>我们这样来记会更加容易一些，在继承时： </p>
+<p>1、不管采用哪种形式（public, protected或private），基类中的私有成员都不可以被继承；如果非要在派生类中使用基类的私有成员，可以有两种方法：一是使用属性，二是使用友元类或友元函数。 </p>
+<p>2、如果采用public形式，则基类除了私有成员的其它所有都被原样的继承到派生类中；即在基类中是public的，在派生类中还是public的，在基类中是protected的，在派生类中还是protected的。 </p>
+<p>3、如果采用protected形式，则基类中除了私有成员的其它说有都被以protected的形式继承到派生类中。<br>C++中的继承方式有：<br>public、private、protected三种（它们直接影响到派生类的成员、及其对象对基类成员访问的规则）。<br>（1）public（公有继承）：继承时保持基类中各成员属性不变，并且基类中private成员被隐藏。派生类的成员只能访问基类中的public/protected成员，而不能访问private成员；派生类的对象只能访问基类中的public成员。<br>（2）private（私有继承）：继承时基类中各成员属性均变为private，并且基类中private成员被隐藏。派生类的成员也只能访问基类中的public/protected成员，而不能访问private成员；派生类的对象不能访问基类中的任何的成员。<br>（3）protected（保护性继承）：继承时基类中各成员属性均变为protected，并且基类中private成员被隐藏。派生类的成员只能访问基类中的public/protected成员，而不能访问private成员；派生类的对象不能访问基类中的任何的成员。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/10/文件描述符--socket通信/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shaw Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShawShaw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/10/文件描述符--socket通信/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-10T10:22:37+08:00">
+                2019-06-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  280
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="文件描述符–socket通信"><a href="#文件描述符–socket通信" class="headerlink" title="文件描述符–socket通信"></a>文件描述符–socket通信</h3><p>转抄:<a href="https://blog.csdn.net/qq_29344757/article/details/78723881" target="_blank" rel="noopener">https://blog.csdn.net/qq_29344757/article/details/78723881</a></p>
+<blockquote>
+<p>linux系统 一切皆是文件</p>
+</blockquote>
+<h4 id="1-创建socket"><a href="#1-创建socket" class="headerlink" title="1~ 创建socket"></a>1~ 创建socket</h4><p>socket 也不例外, <strong>socket是可读/可写/可关闭/可控制的 文件描述符</strong> ,要实现socket通信, 双方都要建立socket 对象</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">domain		指明使用哪一个底层协议簇</span></span><br><span class="line"><span class="comment">type		指定服务类型。主要有SOCK_STREAM(流服务)和SOCK_UGRAM(数据报)服务</span></span><br><span class="line"><span class="comment">protocol	指定具体协议</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">socket</span><span class="params">(<span class="keyword">int</span> domain, <span class="keyword">int</span> type, <span class="keyword">int</span> protocol)</span></span>;</span><br></pre></td></tr></table></figure>
+<h4 id="2-绑定socket"><a href="#2-绑定socket" class="headerlink" title="2~ 绑定socket"></a>2~ 绑定socket</h4><p>到 地址 端口</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">return 成_0 失败_-1 并设置errno</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bind</span><span class="params">(<span class="keyword">int</span> sockfd, <span class="keyword">const</span> struct sockaddr *addr, <span class="keyword">socklen_t</span> addrlen)</span></span>;</span><br></pre></td></tr></table></figure>
+<h4 id="3-监听socket"><a href="#3-监听socket" class="headerlink" title="3~ 监听socket"></a>3~ 监听socket</h4><p>创建一个监听队列, 存放呆处理的客户链接</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">backlog 队列的长度, 满了不再接收新的客户端链接</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">listen</span><span class="params">(<span class="keyword">int</span> sockfd, <span class="keyword">int</span> backlog)</span></span>;</span><br></pre></td></tr></table></figure>
+<h4 id="4-等待链接"><a href="#4-等待链接" class="headerlink" title="4~ 等待链接"></a>4~ 等待链接</h4><p>此系统调用实现从listen监听队列中接收一个链接</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">accept</span><span class="params">(<span class="keyword">int</span> sockfd, struct sockaddr *addr, <span class="keyword">socklen_t</span> *addrlen)</span></span>;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/13/python-numpy-args-sort/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shaw Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShawShaw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/13/python-numpy-args-sort/" itemprop="url">Note_python:numpy_argsort()</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-13T13:07:07+08:00">
+                2019-01-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  414
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="python-numpy-argsort"><a href="#python-numpy-argsort" class="headerlink" title="python numpy argsort"></a>python numpy argsort</h3><blockquote>
+<h6 id="Pre-summary"><a href="#Pre-summary" class="headerlink" title="Pre-summary :"></a>Pre-summary :</h6><p>当前数据不动, 返回 下标 , 下标指示的是排好的数据.  </p>
+</blockquote>
+<h5 id="Where-find"><a href="#Where-find" class="headerlink" title="~ Where find"></a>~ Where find</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_nn</span><span class="params">(x, data, k=None)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    Find the k top indices and distances of index data vectors from query vector x.</span></span><br><span class="line"><span class="string">    :param ndarray x:</span></span><br><span class="line"><span class="string">        the query vector</span></span><br><span class="line"><span class="string">    :param ndarray data:</span></span><br><span class="line"><span class="string">        the index vectors</span></span><br><span class="line"><span class="string">    :param int k:</span></span><br><span class="line"><span class="string">        optional k to truncate return</span></span><br><span class="line"><span class="string">    :returns ndarray idx:</span></span><br><span class="line"><span class="string">        the indices of index vectors in ascending order of distance</span></span><br><span class="line"><span class="string">    :returns ndarray dists:</span></span><br><span class="line"><span class="string">        the squared distances</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> k <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        k = len(data)</span><br><span class="line"></span><br><span class="line">    dists = ((x - data)**<span class="number">2</span>).sum(axis=<span class="number">1</span>)</span><br><span class="line">    idx = np.argsort(dists) </span><br><span class="line">    dists = dists[idx]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> idx[:k], dists[:k]</span><br></pre></td></tr></table></figure>
+<h5 id="How-文档"><a href="#How-文档" class="headerlink" title="~ How 文档"></a>~ How 文档</h5><h6 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h6><p>One dimensional array:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s&gt;&gt;&gt; x = np.array([3, 1, 2])</span><br><span class="line">&gt;&gt;&gt; np.argsort(x)</span><br><span class="line">array([1, 2, 0])</span><br></pre></td></tr></table></figure>
+<p>Two-dimensional array:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; x = np.array([[0, 3], [2, 2]])</span><br><span class="line">&gt;&gt;&gt; x</span><br><span class="line">array([[0, 3],</span><br><span class="line">       [2, 2]])</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; np.argsort(x, axis=0)  # sorts along first axis (down)</span><br><span class="line">array([[0, 1],</span><br><span class="line">       [1, 0]]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; np.argsort(x, axis=1)  # sorts along last axis (across)</span><br><span class="line">array([[0, 1],</span><br><span class="line">       [0, 1]])</span><br></pre></td></tr></table></figure>
+<p>Indices of the sorted elements of a N-dimensional array:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; ind = np.unravel_index(np.argsort(x, axis=None), x.shape)</span><br><span class="line">&gt;&gt;&gt; ind</span><br><span class="line">(array([0, 1, 1, 0]), array([0, 0, 1, 1]))</span><br><span class="line">&gt;&gt;&gt; x[ind]  # same as np.sort(x, axis=None)</span><br><span class="line">array([0, 2, 2, 3])</span><br></pre></td></tr></table></figure>
+<p>Sorting with keys:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; x = np.array([(1, 0), (0, 1)], dtype=[(&apos;x&apos;, &apos;&lt;i4&apos;), (&apos;y&apos;, &apos;&lt;i4&apos;)])</span><br><span class="line">&gt;&gt;&gt; x</span><br><span class="line">array([(1, 0), (0, 1)],</span><br><span class="line">      dtype=[(&apos;x&apos;, &apos;&lt;i4&apos;), (&apos;y&apos;, &apos;&lt;i4&apos;)])</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; np.argsort(x, order=(&apos;x&apos;,&apos;y&apos;))</span><br><span class="line">array([1, 0])</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; np.argsort(x, order=(&apos;y&apos;,&apos;x&apos;))</span><br><span class="line">array([0, 1])</span><br></pre></td></tr></table></figure>
+<h3 id="python-numpy-unravel-index"><a href="#python-numpy-unravel-index" class="headerlink" title="python numpy unravel_index()"></a>python numpy unravel_index()</h3><blockquote>
+<p><strong>Pre-summary</strong> :</p>
+<p>返回 在 (3,3,4) shape 中的, 第 15个元素</p>
+</blockquote>
+<h4 id="Examples-1"><a href="#Examples-1" class="headerlink" title="Examples"></a>Examples</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; np.unravel_index([22, 41, 37], (7,6))</span><br><span class="line">(array([3, 6, 6]), array([4, 5, 1]))</span><br><span class="line">&gt;&gt;&gt; np.unravel_index([31, 41, 13], (7,6), order=&apos;F&apos;)</span><br><span class="line">(array([3, 6, 6]), array([4, 5, 1]))</span><br><span class="line">&gt;&gt;&gt; np.unravel_index(1621, (6,7,8,9))</span><br><span class="line">(3, 1, 4, 1)</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/13/python-stack/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -787,7 +1334,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  481
+                  609
                 </span>
               
 
@@ -803,7 +1350,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  3
                 </span>
               
             </div>
@@ -828,7 +1375,9 @@
       
         
           
-            <h2 id="5-容器"><a href="#5-容器" class="headerlink" title="5 容器"></a>5 容器</h2><h4 id="5-1-Map"><a href="#5-1-Map" class="headerlink" title="5.1 Map"></a>5.1 Map</h4><p>原文:<a href="http://mropengate.blogspot.com/2015/12/cc-map-stl.html" target="_blank" rel="noopener">http://mropengate.blogspot.com/2015/12/cc-map-stl.html</a></p>
+            <h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>例子:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">(<span class="keyword">char</span> (&amp; p)[<span class="number">10</span>])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"char (&amp; p)[10] sizeof(p) %d\n"</span>, <span class="keyword">sizeof</span>(p));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"ptype %s"</span>,<span class="keyword">typeid</span>(p).name());<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>; <span class="comment">//vs竟然是 char [10] 类型 //qt ptype A10_c</span></span><br><span class="line">    p[<span class="number">0</span>] = <span class="string">'1'</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-容器"><a href="#5-容器" class="headerlink" title="5 容器"></a>5 容器</h2><h3 id="5-1-Map"><a href="#5-1-Map" class="headerlink" title="5.1 Map"></a>5.1 Map</h3><p>原文:<a href="http://mropengate.blogspot.com/2015/12/cc-map-stl.html" target="_blank" rel="noopener">http://mropengate.blogspot.com/2015/12/cc-map-stl.html</a></p>
 <p>内部逻辑结构 红黑树</p>
 <ul>
 <li>搜索,插入OlogN</li>
@@ -900,6 +1449,11 @@
 </tbody>
 </table>
 <h4 id="2示例"><a href="#2示例" class="headerlink" title="2示例"></a>2示例</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">map</span>&lt;<span class="built_in">string</span>,<span class="keyword">int</span>&gt; mymap = &#123;</span><br><span class="line">                &#123; <span class="string">"alpha"</span>, <span class="number">0</span> &#125;,</span><br><span class="line">                &#123; <span class="string">"beta"</span>, <span class="number">0</span> &#125;,</span><br><span class="line">                &#123; <span class="string">"gamma"</span>, <span class="number">0</span> &#125; &#125;;</span><br><span class="line"></span><br><span class="line">  mymap.at(<span class="string">"alpha"</span>) = <span class="number">10</span>;</span><br><span class="line">  mymap.at(<span class="string">"beta"</span>) = <span class="number">20</span>;</span><br><span class="line">  mymap.at(<span class="string">"gamma"</span>) = <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; x: mymap) &#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; x.first &lt;&lt; <span class="string">": "</span> &lt;&lt; x.second &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="7-内存"><a href="#7-内存" class="headerlink" title="7 内存"></a>7 内存</h2><h3 id="C库"><a href="#C库" class="headerlink" title="C库"></a>C库</h3><p> alloc：唯一在栈上申请内存的，无需释放；</p>
+<p> malloc：在堆上申请内存，最常用；</p>
+<p> calloc：malloc+初始化为0；</p>
+<p> realloc：将原本申请的内存区域扩容，参数size大小即为扩容后大小，因此此函数要求size大小必须大于ptr内存大小。</p>
+
           
         
       
@@ -1452,578 +2006,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/20/shell-command/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shaw Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShawShaw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/20/shell-command/" itemprop="url">note_shell-command</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-20T21:20:50+08:00">
-                2018-10-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  118
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-find"><a href="#1-find" class="headerlink" title="1 find"></a>1 find</h4><p>find &lt; path &gt; &lt; expression &gt; &lt; cmd &gt;</p>
-<p>footer.ejs</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name "*.ejs"</span><br></pre></td></tr></table></figure>
-<h5 id="2-path"><a href="#2-path" class="headerlink" title="2 path"></a>2 path</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure>
-<h5 id="3-in-out"><a href="#3-in-out" class="headerlink" title="3 in/out"></a>3 in/out</h5><p>macos获取指令输出到剪贴板</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pwd|pbcopy</span><br></pre></td></tr></table></figure>
-<h5 id="4-pipe"><a href="#4-pipe" class="headerlink" title="4 pipe"></a>4 pipe</h5><p>管道 链接两条指令,前面的out 做后面的in</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pwd|pbcopy</span><br></pre></td></tr></table></figure>
-<h5 id="5-如何卸载protobuf"><a href="#5-如何卸载protobuf" class="headerlink" title="5 如何卸载protobuf"></a>5 如何卸载protobuf</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">在终端执行</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">1. which protoc </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    注：whick protoc后会出现一个路径，一般是 /usr/local/bin/protoc</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    这里默认称 /usr/local/bin/protoc为protoc_path</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2. sudo rm 第一步中protoc_path</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    注：一般是sudo rm /usr/local/bin/protoc</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">即可完成卸载</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/20/h5py/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shaw Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShawShaw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/20/h5py/" itemprop="url">h5py and pys</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-20T16:15:32+08:00">
-                2018-10-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  1.9k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  10
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-h5py"><a href="#1-h5py" class="headerlink" title="1 h5py"></a>1 h5py</h1><blockquote>
-<h4 id="What-is-HDF5"><a href="#What-is-HDF5" class="headerlink" title="What is HDF5"></a>What is HDF5</h4><p>如果你使用 h5py 不需要知道具体HDF5是什么.</p>
-<p>HDF® supports n-dimensional datasets and each element in the dataset may itself be a complex object.</p>
-<p>存放两类对象的容器：dataset(数组)和group(词典)</p>
-<h4 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h4><p>It lets you store huge amounts of numerical data, and easily manipulate that data from NumPy. For example, you can slice into multi-terabyte datasets stored on disk, as if they were real NumPy arrays. Thousands of datasets can be stored in a single file, categorized and tagged however you want.</p>
-<p><a href="http://docs.h5py.org/en/latest/quick.html#quick-start-guide" target="_blank" rel="noopener">Quick Start Guide</a></p>
-</blockquote>
-<h4 id="1-打开文件"><a href="#1-打开文件" class="headerlink" title="1 打开文件"></a>1 打开文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import h5py</span><br><span class="line">&gt;&gt;&gt; f = h5py.File(&apos;mytestfile.hdf5&apos;, &apos;r&apos;)</span><br></pre></td></tr></table></figure>
-<p>就像py的字典 Remember <code>h5py.File</code> acts like a Python dictionary, thus we can check the key</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; list(f.keys())</span><br><span class="line">[&apos;mydataset&apos;]</span><br></pre></td></tr></table></figure>
-<p>获取数据集 Based on our observation, there is one data set, <code>mydataset</code> in the file. Let us examine the data set as a <a href="http://docs.h5py.org/en/latest/high/dataset.html#dataset" target="_blank" rel="noopener">Dataset</a> object</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dset = f[&apos;mydataset&apos;]</span><br></pre></td></tr></table></figure>
-<p>不是一个数组, 而是一个 HDF5数据集, 有形状和数据类型属性, 就像np的数组 The object we obtained isn’t an array, but <a href="http://docs.h5py.org/en/latest/high/dataset.html#dataset" target="_blank" rel="noopener">an HDF5 dataset</a>. Like NumPy arrays, datasets have both a shape and a data type:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dset.shape</span><br><span class="line">(100,)</span><br><span class="line">&gt;&gt;&gt; dset.dtype</span><br><span class="line">dtype(&apos;int32&apos;)</span><br></pre></td></tr></table></figure>
-<p>同样支持数组的下标 They also support array-style slicing. This is how you read and write data from a dataset in the file:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dset[...] = np.arange(100)</span><br><span class="line">&gt;&gt;&gt; dset[0]</span><br><span class="line">0</span><br><span class="line">&gt;&gt;&gt; dset[10]</span><br><span class="line">10</span><br><span class="line">&gt;&gt;&gt; dset[0:100:10]</span><br><span class="line">array([ 0, 10, 20, 30, 40, 50, 60, 70, 80, 90])</span><br></pre></td></tr></table></figure>
-<p>For more, see <a href="http://docs.h5py.org/en/latest/high/file.html#file" target="_blank" rel="noopener">File Objects</a> and <a href="http://docs.h5py.org/en/latest/high/dataset.html#dataset" target="_blank" rel="noopener">Datasets</a>.</p>
-<h4 id="2-创建文件"><a href="#2-创建文件" class="headerlink" title="2 创建文件"></a>2 创建文件</h4><p>At this point, you may wonder how <code>mytestdata.hdf5</code> is created. We can create a file by setting the <code>mode</code> to <code>w</code> when the File object is initialized. Some other modes are <code>a</code> (for read/write/create access), and <code>r+</code> (for read/write access). A full list of file access modes and their meanings is at <a href="http://docs.h5py.org/en/latest/high/file.html#file" target="_blank" rel="noopener">File Objects</a>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import h5py</span><br><span class="line">&gt;&gt;&gt; import numpy as np</span><br><span class="line">&gt;&gt;&gt; f = h5py.File(&quot;mytestfile.hdf5&quot;, &quot;w&quot;)</span><br></pre></td></tr></table></figure>
-<p>The <a href="http://docs.h5py.org/en/latest/high/file.html#file" target="_blank" rel="noopener">File object</a> has a couple of methods which look interesting. One of them is <code>create_dataset</code>, which as the name suggests, creates a data set of given shape and dtype</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dset = f.create_dataset(&quot;mydataset&quot;, (100,), dtype=&apos;i&apos;)</span><br></pre></td></tr></table></figure>
-<p>The File object is a context manager; so the following code works too</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import h5py</span><br><span class="line">&gt;&gt;&gt; import numpy as np</span><br><span class="line">&gt;&gt;&gt; with h5py.File(&quot;mytestfile.hdf5&quot;, &quot;w&quot;) as f:</span><br><span class="line">&gt;&gt;&gt;     dset = f.create_dataset(&quot;mydataset&quot;, (100,), dtype=&apos;i&apos;)</span><br></pre></td></tr></table></figure>
-<h3 id="3-“文件夹”-和-层次地组织-Groups-and-hierarchical-organization"><a href="#3-“文件夹”-和-层次地组织-Groups-and-hierarchical-organization" class="headerlink" title="3 “文件夹” 和 层次地组织 Groups and hierarchical organization"></a>3 “文件夹” 和 层次地组织 Groups and hierarchical organization</h3><p>就像文件系统,层次地组织数据 “HDF” = “Hierarchical Data Format”. Every object in an HDF5 file has a name, and they’re arranged in a POSIX-style hierarchy with <code>/</code>-separators:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dset.name</span><br><span class="line">u&apos;/mydataset&apos;</span><br></pre></td></tr></table></figure>
-<p>文件夹 即所谓的”groups” .  file文件f, 其名字, 即如同根目录. The “folders” in this system are called <a href="http://docs.h5py.org/en/latest/high/group.html#group" target="_blank" rel="noopener">groups</a>. The <code>File</code> object we created is itself a group, in this case the root group, named <code>/</code>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; f.name</span><br><span class="line">u&apos;/&apos;</span><br></pre></td></tr></table></figure>
-<p>创建子文件夹 Creating a subgroup is accomplished via the aptly-named <code>create_group</code>. But we need to open the file in the “append” mode first (Read/write if exists, create otherwise)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; f = h5py.File(&apos;mydataset.hdf5&apos;, &apos;a&apos;)</span><br><span class="line">&gt;&gt;&gt; grp = f.create_group(&quot;subgroup&quot;)</span><br></pre></td></tr></table></figure>
-<p>创建文件夹/创建文件 . All <code>Group</code> objects also have the <code>create_*</code> methods like File:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dset2 = grp.create_dataset(&quot;another_dataset&quot;, (50,), dtype=&apos;f&apos;)</span><br><span class="line">&gt;&gt;&gt; dset2.name</span><br><span class="line">u&apos;/subgroup/another_dataset&apos;</span><br></pre></td></tr></table></figure>
-<p>还能用绝地地址创建文件 . By the way, you don’t have to create all the intermediate groups manually. Specifying a full path works just fine:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dset3 = f.create_dataset(&apos;subgroup2/dataset_three&apos;, (10,), dtype=&apos;i&apos;)</span><br><span class="line">&gt;&gt;&gt; dset3.name</span><br><span class="line">u&apos;/subgroup2/dataset_three&apos;</span><br></pre></td></tr></table></figure>
-<p>用路径名获取数据(文件) Groups support most of the Python dictionary-style interface. You retrieve objects in the file using the item-retrieval syntax:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dataset_three = f[&apos;subgroup2/dataset_three&apos;]</span><br></pre></td></tr></table></figure>
-<p>Iterating over a group provides the names of its members:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; for name in f:</span><br><span class="line">...     print name</span><br><span class="line">mydataset</span><br><span class="line">subgroup</span><br><span class="line">subgroup2</span><br></pre></td></tr></table></figure>
-<p>Membership testing also uses names:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; &quot;mydataset&quot; in f</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; &quot;somethingelse&quot; in f</span><br><span class="line">False</span><br></pre></td></tr></table></figure>
-<p>You can even use full path names:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; &quot;subgroup/another_dataset&quot; in f</span><br><span class="line">True</span><br></pre></td></tr></table></figure>
-<p>There are also the familiar <code>keys()</code>, <code>values()</code>, <code>items()</code> and <code>iter()</code> methods, as well as <code>get()</code>.</p>
-<p>Since iterating over a group only yields its directly-attached members, iterating over an entire file is accomplished with the <code>Group</code> methods <code>visit()</code> and <code>visititems()</code>, which take a callable:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def printname(name):</span><br><span class="line">...     print name</span><br><span class="line">&gt;&gt;&gt; f.visit(printname)</span><br><span class="line">mydataset</span><br><span class="line">subgroup</span><br><span class="line">subgroup/another_dataset</span><br><span class="line">subgroup2</span><br><span class="line">subgroup2/dataset_three</span><br></pre></td></tr></table></figure>
-<p>For more, see <a href="http://docs.h5py.org/en/latest/high/group.html#group" target="_blank" rel="noopener">Groups</a>.</p>
-<h1 id="2-argparse"><a href="#2-argparse" class="headerlink" title="2 argparse"></a>2 argparse</h1><blockquote>
-<p>python 内置 用于命令行解析. 同类第三方包:docopt / click;</p>
-<p><a href="https://docs.python.org/2/howto/argparse.html" target="_blank" rel="noopener">https://docs.python.org/2/howto/argparse.html</a></p>
-</blockquote>
-<h4 id="概念理解"><a href="#概念理解" class="headerlink" title="概念理解"></a>概念理解</h4><p>场景举例. Let’s show the sort of functionality that we are going to explore in this introductory tutorial by making use of the <strong>ls</strong>command:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ls</span><br><span class="line">cpython  devguide  prog.py  pypy  rm-unused-function.patch</span><br><span class="line"><span class="meta">$</span> ls pypy</span><br><span class="line">ctypes_configure  demo  dotviewer  include  lib_pypy  lib-python ...</span><br><span class="line"><span class="meta">$</span> ls -l</span><br><span class="line">total 20</span><br><span class="line">drwxr-xr-x 19 wena wena 4096 Feb 18 18:51 cpython</span><br><span class="line">drwxr-xr-x  4 wena wena 4096 Feb  8 12:04 devguide</span><br><span class="line">-rwxr-xr-x  1 wena wena  535 Feb 19 00:05 prog.py</span><br><span class="line">drwxr-xr-x 14 wena wena 4096 Feb  7 00:59 pypy</span><br><span class="line">-rw-r--r--  1 wena wena  741 Feb 18 01:01 rm-unused-function.patch</span><br><span class="line"><span class="meta">$</span> ls --help</span><br><span class="line">Usage: ls [OPTION]... [FILE]...</span><br><span class="line">List information about the FILEs (the current directory by default).</span><br><span class="line">Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><p>Let us start with a very simple example which does (almost) nothing:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.parse_args()</span><br></pre></td></tr></table></figure>
-<p>Following is a result of running the code:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> python prog.py</span><br><span class="line"><span class="meta">$</span> python prog.py --help</span><br><span class="line">usage: prog.py [-h]</span><br><span class="line"></span><br><span class="line">optional arguments:</span><br><span class="line">  -h, --help  show this help message and exit</span><br><span class="line"><span class="meta">$</span> python prog.py --verbose</span><br><span class="line">usage: prog.py [-h]</span><br><span class="line">prog.py: error: unrecognized arguments: --verbose</span><br><span class="line"><span class="meta">$</span> python prog.py foo</span><br><span class="line">usage: prog.py [-h]</span><br><span class="line">prog.py: error: unrecognized arguments: foo</span><br></pre></td></tr></table></figure>
-<p>Here is what is happening:</p>
-<ul>
-<li>Running the script without any options results in nothing displayed to stdout. Not so析 The second one starts to display the usefulness of the <a href="https://docs.python.org/2/library/argparse.html#module-argparse" target="_blank" rel="noopener"><code>argparse</code></a> module. We have done almost nothing, but already we get a nice help message.</li>
-<li>简写-h也是默认带的 The <code>--help</code> option, which can also be shortened to <code>-h</code>, is the only option we get for free (i.e. no need to specify it). Specifying anything else results in an error. But even then, we do get a useful usage message, also for free.</li>
-</ul>
-<h4 id="位置定位的参数"><a href="#位置定位的参数" class="headerlink" title="位置定位的参数"></a>位置定位的参数</h4><p>栗子🌰:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(<span class="string">"echo"</span>)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line"><span class="keyword">print</span> args.echo</span><br></pre></td></tr></table></figure>
-<p>运行场景:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> python prog.py</span><br><span class="line">usage: prog.py [-h] echo</span><br><span class="line">prog.py: error: the following arguments are required: echo</span><br><span class="line"><span class="meta">$</span> python prog.py --help</span><br><span class="line">usage: prog.py [-h] echo</span><br><span class="line"></span><br><span class="line">positional arguments:</span><br><span class="line">  echo</span><br><span class="line"></span><br><span class="line">optional arguments:</span><br><span class="line">  -h, --help  show this help message and exit</span><br><span class="line"><span class="meta">$</span> python prog.py foo</span><br><span class="line">foo</span><br></pre></td></tr></table></figure>
-<p>Here is what’s happening: <strong>原以为它需要一个echo参数, foo也可以</strong></p>
-<ul>
-<li><strong>此函数用来指明需要哪个参数</strong>We’ve added the <code>add_argument()</code> method, which is what we use to specify which command-line options the program is willing to accept. In this case, I’ve named it <code>echo</code> so that it’s in line with its function.</li>
-<li>Calling our program now requires us to specify an option.</li>
-<li><strong>返回指明的那个参数 这里返回的是叫echo的</strong>The <code>parse_args()</code> method actually returns some data from the options specified, in this case, <code>echo</code>.</li>
-<li>The variable is some form of ‘magic’ that <a href="https://docs.python.org/2/library/argparse.html#module-argparse" target="_blank" rel="noopener"><code>argparse</code></a>performs for free (i.e. no need to specify which variable that value is stored in). You will also notice that its name matches the string argument given to the method, <code>echo</code>.</li>
-</ul>
-<p><strong>添加更有用的help 比如关于echo是个啥</strong> Note however that, although the help display looks nice and all, it currently is not as helpful as it can be. For example we see that we got <code>echo</code> as a positional argument, but we don’t know what it does, other than by guessing or by reading the source code. So, let’s make it a bit more useful:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import argparse</span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(&quot;echo&quot;, help=&quot;echo the string you use here&quot;)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line">print args.echo</span><br></pre></td></tr></table></figure>
-<p>And we get:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ python prog.py -h</span><br><span class="line">usage: prog.py [-h] echo</span><br><span class="line"></span><br><span class="line">positional arguments:</span><br><span class="line">  echo        echo the string you use here</span><br><span class="line"></span><br><span class="line">optional arguments:</span><br><span class="line">  -h, --help  show this help message and exit</span><br></pre></td></tr></table></figure>
-<p><strong>Now, 上面的实质是个<u>复读机</u></strong>, how about doing something even more useful:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import argparse</span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(&quot;square&quot;, help=&quot;display a square of a given number&quot;)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line">print args.square**2</span><br></pre></td></tr></table></figure>
-<p><strong>这个实质是个平方机</strong>(并不)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ python prog.py 4</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;prog.py&quot;, line 5, in &lt;module&gt;</span><br><span class="line">    print args.square**2</span><br><span class="line">TypeError: unsupported operand type(s) for ** or pow(): &apos;str&apos; and &apos;int&apos;</span><br></pre></td></tr></table></figure>
-<p><strong>默认处理参数为string</strong> That didn’t go so well. That’s because <a href="https://docs.python.org/2/library/argparse.html#module-argparse" target="_blank" rel="noopener"><code>argparse</code></a> treats the options we give it as strings, unless we tell it otherwise. So, let’s tell <a href="https://docs.python.org/2/library/argparse.html#module-argparse" target="_blank" rel="noopener"><code>argparse</code></a> to treat that input as an integer:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import argparse</span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(&quot;square&quot;, help=&quot;display a square of a given number&quot;,</span><br><span class="line">                    type=int)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line">print args.square**2</span><br></pre></td></tr></table></figure>
-<p>Following is a result of running the code:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ python prog.py 4</span><br><span class="line">16</span><br><span class="line">$ python prog.py four</span><br><span class="line">usage: prog.py [-h] square</span><br><span class="line">prog.py: error: argument square: invalid int value: &apos;four&apos;</span><br></pre></td></tr></table></figure>
-<p>That went well. The program now even helpfully quits on bad illegal input before proceeding.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/19/Markdown-Latex-Signs/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shaw Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShawShaw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/19/Markdown-Latex-Signs/" itemprop="url">Markdown-Latex-Signs</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-19T19:13:30+08:00">
-                2018-10-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/测试分类/" itemprop="url" rel="index">
-                    <span itemprop="name">测试分类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  24
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-符号的底部-符号的顶部"><a href="#1-符号的底部-符号的顶部" class="headerlink" title="1 符号的底部/符号的顶部"></a>1 符号的底部/符号的顶部</h3><p>$v^i = \sum \limits_{x:q(x) = u_i }^{up}x - u_i$</p>
-<p>\limits_{}^{up}</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2074,7 +2056,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
