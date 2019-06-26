@@ -233,6 +233,169 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/20/Note-cpp-字节对齐/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shaw Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShawShaw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/20/Note-cpp-字节对齐/" itemprop="url">Note_cpp::字节对齐</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-20T22:46:31+08:00">
+                2019-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  136
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-字节对齐"><a href="#1-字节对齐" class="headerlink" title="1~ 字节对齐"></a>1~ 字节对齐</h3><ul>
+<li>结构体中, 每个成员的存储起点, 是它自己大小的整数倍, 如例</li>
+<li>整个结构体大小,  是其内部最大单位的整数倍</li>
+<li>上面的内部最大单位可以自己设定</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">someStruct</span>&#123;</span></span><br><span class="line">    <span class="keyword">char</span> a[<span class="number">3</span>];					</span><br><span class="line">    <span class="keyword">int</span> b;						<span class="comment">//  存在4*1 的位置, 前面四个字节闲置一个</span></span><br><span class="line">    <span class="keyword">long</span> c;						<span class="comment">// 存在8*1  的位置</span></span><br><span class="line">&#125;;								<span class="comment">//整个 用 8*n大小</span></span><br></pre></td></tr></table></figure>
+<p><em>例外情况</em> :</p>
+<ol>
+<li>16位机一般没有对齐概念</li>
+<li>union{} 按定义, 分配里面最大的一个就可</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/cpp-inheritance/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1334,7 +1497,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  609
+                  1.4k
                 </span>
               
 
@@ -1350,7 +1513,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  3
+                  6
                 </span>
               
             </div>
@@ -1375,8 +1538,8 @@
       
         
           
-            <h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>例子:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">(<span class="keyword">char</span> (&amp; p)[<span class="number">10</span>])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"char (&amp; p)[10] sizeof(p) %d\n"</span>, <span class="keyword">sizeof</span>(p));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"ptype %s"</span>,<span class="keyword">typeid</span>(p).name());<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>; <span class="comment">//vs竟然是 char [10] 类型 //qt ptype A10_c</span></span><br><span class="line">    p[<span class="number">0</span>] = <span class="string">'1'</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h2 id="4指针"><a href="#4指针" class="headerlink" title="4指针"></a>4指针</h2><h4 id="char类型指针"><a href="#char类型指针" class="headerlink" title="char类型指针"></a>char类型指针</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">(<span class="keyword">char</span> (&amp; p)[<span class="number">10</span>])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"char (&amp; p)[10] sizeof(p) %d\n"</span>, <span class="keyword">sizeof</span>(p));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"ptype %s"</span>,<span class="keyword">typeid</span>(p).name());<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>; <span class="comment">//vs竟然是 char [10] 类型 //qt ptype A10_c</span></span><br><span class="line">    p[<span class="number">0</span>] = <span class="string">'1'</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="二维数组指针"><a href="#二维数组指针" class="headerlink" title="二维数组指针"></a>二维数组指针</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//测试二维数组指针</span></span><br><span class="line">    <span class="keyword">int</span> arr2D[<span class="number">2</span>][<span class="number">3</span>] = &#123;&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;,&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;&#125;;</span><br><span class="line">    <span class="keyword">int</span> (*p1)[<span class="number">3</span>];</span><br><span class="line"><span class="comment">//二维数组的名的类型 即 int(*)(N)</span></span><br><span class="line">    p1 = arr2D;</span><br><span class="line"><span class="comment">//据说, &amp;d 会输出 栈里 4字节大小为整数, 不管它是不是8字节</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"p1 "</span>&lt;&lt;p1 &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"*p1 "</span>&lt;&lt;*p1 &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"*(p1+1 )"</span>&lt;&lt;*(p1+<span class="number">1</span>) &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"(*p1)[1]"</span>&lt;&lt;(*p1)[<span class="number">1</span>] &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"*(p1+1)[1]"</span>&lt;&lt;*(p1+<span class="number">1</span>)[<span class="number">1</span>] &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//所以二维数组a[M][N]中，a[i]表示的就是元素a[i][0]的地址</span></span><br><span class="line">    <span class="comment">// a[i] 和 *(a+i)  等价</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"arr2d "</span>&lt;&lt;arr2D &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"&amp;arr2D[0][0]"</span> &lt;&lt; &amp;arr2D[<span class="number">0</span>][<span class="number">0</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"*(arr2d)"</span> &lt;&lt; *(arr2D) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"*(*(arr2D) )"</span> &lt;&lt; *(*(arr2D) )&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"*(arr2D)[1] "</span>&lt;&lt;*(arr2D)[<span class="number">1</span>] &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"(*(arr2D))[1] "</span>&lt;&lt;(*(arr2D))[<span class="number">1</span>] &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"*((arr2D)[1])"</span>&lt;&lt;*((arr2D)[<span class="number">1</span>]) &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"*(*(arr2D)+1)"</span>&lt;&lt;*(*(arr2D)+<span class="number">1</span>)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"*(arr2D+1)[1] "</span>&lt;&lt;*(arr2D+<span class="number">1</span>)[<span class="number">1</span>] &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"*(arr2D+1)[0] "</span>&lt;&lt;*(arr2D+<span class="number">1</span>)[<span class="number">0</span>] &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"printd p1 %d \n"</span>,p1);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"p1[1][2] "</span>&lt;&lt;p1[<span class="number">1</span>][<span class="number">2</span>] &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"printd *(p1+1)[2] %d \n"</span>, *(p1+<span class="number">1</span>)[<span class="number">2</span>]);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"*(p1+1)[2] "</span>&lt;&lt;(*p1+<span class="number">1</span>)[<span class="number">1</span>] &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">p1 <span class="number">0x7ffee8e72ac0</span></span><br><span class="line">*p1 <span class="number">0x7ffee8e72ac0</span></span><br><span class="line">*(p1+<span class="number">1</span> )<span class="number">0x7ffee8e72acc</span></span><br><span class="line">(*p1)[<span class="number">1</span>]<span class="number">2</span></span><br><span class="line">*(p1+<span class="number">1</span>)[<span class="number">1</span>]<span class="number">259391725</span></span><br><span class="line">arr2d <span class="number">0x7ffee8e72ac0</span></span><br><span class="line">&amp;arr2D[<span class="number">0</span>][<span class="number">0</span>]<span class="number">0x7ffee8e72ac0</span></span><br><span class="line">*(arr2d)<span class="number">0x7ffee8e72ac0</span></span><br><span class="line">*(*(arr2D) )<span class="number">1</span></span><br><span class="line">*(arr2D)[<span class="number">1</span>] <span class="number">4</span></span><br><span class="line">(*(arr2D))[<span class="number">1</span>] <span class="number">2</span></span><br><span class="line">*((arr2D)[<span class="number">1</span>])<span class="number">4</span></span><br><span class="line">*(*(arr2D)+<span class="number">1</span>)<span class="number">2</span></span><br><span class="line">*(arr2D+<span class="number">1</span>)[<span class="number">1</span>] <span class="number">259391725</span></span><br><span class="line">*(arr2D+<span class="number">1</span>)[<span class="number">0</span>] <span class="number">4</span></span><br><span class="line">printd p1 <span class="number">-387503424</span> </span><br><span class="line">p1[<span class="number">1</span>][<span class="number">2</span>] <span class="number">6</span></span><br><span class="line">printd *(p1+<span class="number">1</span>)[<span class="number">2</span>] <span class="number">32766</span> </span><br><span class="line">*(p1+<span class="number">1</span>)[<span class="number">2</span>] <span class="number">3</span></span><br><span class="line"><span class="comment">//对于这个为什么不对   a[i] 和 *(a+i)  等价  , []含义, 对地址加几再取</span></span><br><span class="line"><span class="comment">//虽然, arr2D的值 与 *arr2D的值相同 , 但他会被当做二级指针,</span></span><br><span class="line"><span class="comment">// *arr2D会成为, int* 类型 , 相当于 *(arr2D+0), 即 a[0], 即 第一行的地址</span></span><br><span class="line"><span class="comment">// *(arr2D+1)   即a[1] 的值</span></span><br><span class="line">  </span><br><span class="line"><span class="comment">// 上面bb了半天,  原来是 []的结合律更高级 , 不过上面说的没毛病</span></span><br></pre></td></tr></table></figure>
 <h2 id="5-容器"><a href="#5-容器" class="headerlink" title="5 容器"></a>5 容器</h2><h3 id="5-1-Map"><a href="#5-1-Map" class="headerlink" title="5.1 Map"></a>5.1 Map</h3><p>原文:<a href="http://mropengate.blogspot.com/2015/12/cc-map-stl.html" target="_blank" rel="noopener">http://mropengate.blogspot.com/2015/12/cc-map-stl.html</a></p>
 <p>内部逻辑结构 红黑树</p>
 <ul>
@@ -1453,6 +1616,16 @@
 <p> malloc：在堆上申请内存，最常用；</p>
 <p> calloc：malloc+初始化为0；</p>
 <p> realloc：将原本申请的内存区域扩容，参数size大小即为扩容后大小，因此此函数要求size大小必须大于ptr内存大小。</p>
+<h2 id="8-一些关键字"><a href="#8-一些关键字" class="headerlink" title="8 一些关键字"></a>8 一些关键字</h2><h3 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h3><p><a href="http://blog.csdn.net/zerocboy/article/details/51638828" target="_blank" rel="noopener">http://blog.csdn.net/zerocboy/article/details/51638828</a></p>
+<p>volatile：易变的，不稳定的。volatile用来声明那些可能在你的程序本身不知道的情况下会发生改变的变量。</p>
+<p><strong>一个参数既可以是const也可以是volatile：一个例子是只读的状态寄存器。它是volatile因为它可能被意想不到地改变。它是const因为程序不应该试图去修改它</strong>。（简单点就是该程序代码不能试图去修改它，但不排除硬件方面修改了它，我们每次都得重新读取它的值。）</p>
+<p>几个应用例子：</p>
+<p>a. 并行设备的硬件寄存器（如：状态寄存器）。</p>
+<p>b. 一个中断服务子程序中会访问到的非自动变量。（个人理解：中断服务子程序不能用缓存在寄存器中的值来判断事件，因为那个值可能被修改了，需要重新读取。所以一般需要把这种变量声明为volatile。）</p>
+<p>c. 多线程应用中被几个任务共享的变量。</p>
+<p><a href="https://www.cnblogs.com/yizui/archive/2019/03/30/10628020.html" target="_blank" rel="noopener">https://www.cnblogs.com/yizui/archive/2019/03/30/10628020.html</a></p>
+<p>总结: 编译器会对代码做优化, 从而有些语句的真正执行时的顺序(汇编)会改变, 而加volatile后, 访问顺序不变. </p>
+<p>多用于嵌入式开发    ,不能保证多线程安全</p>
 
           
         
@@ -1850,162 +2023,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/21/hexo-wordcount/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shaw Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShawShaw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/21/hexo-wordcount/" itemprop="url">hexo\next主题自带的字数统计\阅读时长功能</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-21T10:42:24+08:00">
-                2018-10-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  55
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-主题配置文件"><a href="#1-主题配置文件" class="headerlink" title="1 主题配置文件"></a>1 主题配置文件</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/willin/hexo-wordcount</span></span><br><span class="line"><span class="attr">post_wordcount:</span></span><br><span class="line"><span class="attr">  item_text:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  wordcount:</span> <span class="literal">true</span>         <span class="comment">#文章字数统计</span></span><br><span class="line"><span class="attr">  min2read:</span> <span class="literal">true</span>          <span class="comment">#文阅读时长</span></span><br><span class="line"><span class="attr">  totalcount:</span> <span class="literal">false</span>       </span><br><span class="line"><span class="attr">  separated_meta:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>本地预览</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<h4 id="依赖插件"><a href="#依赖插件" class="headerlink" title="依赖插件"></a>依赖插件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save hexo-wordcount</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2056,7 +2073,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
