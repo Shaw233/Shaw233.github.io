@@ -79,24 +79,18 @@
 
 
 
-<meta name="description" content="https://github.com/CyC2018/CS-Notes/blob/master/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%20-%20%E6%A6%82%E8%BF%B0.md 计算机网络体系结构 1. 五层协议 应用层 ：为特定应用程序提供数据传输服务，例如 HTTP、DNS 等协议。数据单位为报文。 传输层 ：为进程">
+<meta name="description" content="原文 : https://www.cnblogs.com/zhyg6516/archive/2011/03/08/1977007.html 文章 深入讨论了  带有异常处理的,  函数栈级别的解释, 待深入整理  NOTE： error handling \1. 当异常发生时，系统得到控制权，系统从FS:[0]寄存器取到异常处理链的头，以及异常的类型， 调用异常处理函数。（异常函数是编译器生成的）">
 <meta name="keywords" content="ML AI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Note_net">
-<meta property="og:url" content="http://yoursite.com/2019/06/24/Note-net/index.html">
+<meta property="og:title" content="note-cpp-Structure-Error-Handling">
+<meta property="og:url" content="http://yoursite.com/2019/09/02/note-cpp-Structure-Error-Handling/index.html">
 <meta property="og:site_name" content="ShawShaw">
-<meta property="og:description" content="https://github.com/CyC2018/CS-Notes/blob/master/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%20-%20%E6%A6%82%E8%BF%B0.md 计算机网络体系结构 1. 五层协议 应用层 ：为特定应用程序提供数据传输服务，例如 HTTP、DNS 等协议。数据单位为报文。 传输层 ：为进程">
+<meta property="og:description" content="原文 : https://www.cnblogs.com/zhyg6516/archive/2011/03/08/1977007.html 文章 深入讨论了  带有异常处理的,  函数栈级别的解释, 待深入整理  NOTE： error handling \1. 当异常发生时，系统得到控制权，系统从FS:[0]寄存器取到异常处理链的头，以及异常的类型， 调用异常处理函数。（异常函数是编译器生成的）">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/notes/pics/0fa6c237-a909-4e2a-a771-2c5485cd8ce0.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/notes/pics/48d79be8-085b-4862-8a9d-18402eb93b31.png">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/notes/pics/66192382-558b-4b05-a35d-ac4a2b1a9811.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/notes/pics/b9d79a5a-e7af-499b-b989-f10483e71b8b.jpg">
-<meta property="og:image" content="https://github.com/CyC2018/CS-Notes/raw/master/notes/pics/8006a450-6c2f-498c-a928-c927f758b1d0.png">
-<meta property="og:updated_time" content="2019-06-24T14:53:36.596Z">
+<meta property="og:updated_time" content="2019-09-02T15:39:43.551Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Note_net">
-<meta name="twitter:description" content="https://github.com/CyC2018/CS-Notes/blob/master/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%20-%20%E6%A6%82%E8%BF%B0.md 计算机网络体系结构 1. 五层协议 应用层 ：为特定应用程序提供数据传输服务，例如 HTTP、DNS 等协议。数据单位为报文。 传输层 ：为进程">
-<meta name="twitter:image" content="https://github.com/CyC2018/CS-Notes/raw/master/notes/pics/0fa6c237-a909-4e2a-a771-2c5485cd8ce0.png">
+<meta name="twitter:title" content="note-cpp-Structure-Error-Handling">
+<meta name="twitter:description" content="原文 : https://www.cnblogs.com/zhyg6516/archive/2011/03/08/1977007.html 文章 深入讨论了  带有异常处理的,  函数栈级别的解释, 待深入整理  NOTE： error handling \1. 当异常发生时，系统得到控制权，系统从FS:[0]寄存器取到异常处理链的头，以及异常的类型， 调用异常处理函数。（异常函数是编译器生成的）">
 
 
 
@@ -126,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/06/24/Note-net/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/09/02/note-cpp-Structure-Error-Handling/"/>
 
 
 
 
 
-  <title>Note_net | ShawShaw</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>note-cpp-Structure-Error-Handling | ShawShaw</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -239,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/24/Note-net/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/02/note-cpp-Structure-Error-Handling/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shaw Young">
@@ -256,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Note_net</h1>
+          <h1 class="post-title" itemprop="name headline">note-cpp-Structure-Error-Handling</h1>
         
 
         <div class="post-meta">
@@ -268,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-24T00:04:00+08:00">
-                2019-06-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-02T23:05:29+08:00">
+                2019-09-02
               </time>
             
 
@@ -300,7 +294,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.1k
+                  916
                 </span>
               
 
@@ -316,7 +310,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  4
+                  3
                 </span>
               
             </div>
@@ -339,46 +333,28 @@
       
 
       
-        <p><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机网络 - 概述.md" target="_blank" rel="noopener">https://github.com/CyC2018/CS-Notes/blob/master/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%20-%20%E6%A6%82%E8%BF%B0.md</a></p>
-<h1 id="计算机网络体系结构"><a href="#计算机网络体系结构" class="headerlink" title="计算机网络体系结构"></a>计算机网络体系结构</h1><p><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/0fa6c237-a909-4e2a-a771-2c5485cd8ce0.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/notes/pics/0fa6c237-a909-4e2a-a771-2c5485cd8ce0.png" alt="img"></a></p>
-<h2 id="1-五层协议"><a href="#1-五层协议" class="headerlink" title="1. 五层协议"></a>1. 五层协议</h2><ul>
-<li><strong>应用层</strong> ：为特定应用程序提供数据传输服务，例如 HTTP、DNS 等协议。数据单位为报文。</li>
-<li><strong>传输层</strong> ：为进程提供通用数据传输服务。由于应用层协议很多，定义通用的传输层协议就可以支持不断增多的应用层协议。运输层包括两种协议：传输控制协议 TCP，提供面向连接、可靠的数据传输服务，数据单位为报文段；用户数据报协议 UDP，提供无连接、尽最大努力的数据传输服务，数据单位为用户数据报。TCP 主要提供完整性服务，UDP 主要提供及时性服务。</li>
-<li><strong>网络层</strong> ：为主机提供数据传输服务。而传输层协议是为主机中的进程提供数据传输服务。网络层把传输层传递下来的报文段或者用户数据报封装成分组。</li>
-<li><strong>数据链路层</strong> ：网络层针对的还是主机之间的数据传输服务，而主机之间可以有很多链路，链路层协议就是为同一链路的主机提供数据传输服务。数据链路层把网络层传下来的分组封装成帧。</li>
-<li><strong>物理层</strong> ：考虑的是怎样在传输媒体上传输数据比特流，而不是指具体的传输媒体。物理层的作用是尽可能屏蔽传输媒体和通信手段的差异，使数据链路层感觉不到这些差异。</li>
-</ul>
-<h2 id="2-OSI"><a href="#2-OSI" class="headerlink" title="2. OSI"></a>2. OSI</h2><p>其中表示层和会话层用途如下：</p>
-<ul>
-<li><strong>表示层</strong> ：数据压缩、加密以及数据描述，这使得应用程序不必关心在各台主机中数据内部格式不同的问题。</li>
-<li><strong>会话层</strong> ：建立及管理会话。</li>
-</ul>
-<p>五层协议没有表示层和会话层，而是将这些功能留给应用程序开发者处理。</p>
-<h2 id="3-TCP-IP"><a href="#3-TCP-IP" class="headerlink" title="3. TCP/IP"></a>3. TCP/IP</h2><p>它只有四层，相当于五层协议中数据链路层和物理层合并为网络接口层。</p>
-<p>TCP/IP 体系结构不严格遵循 OSI 分层概念，应用层可能会直接使用 IP 层或者网络接口层。</p>
-<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/48d79be8-085b-4862-8a9d-18402eb93b31.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/notes/pics/48d79be8-085b-4862-8a9d-18402eb93b31.png" alt="img"></a></p>
-<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><p>与 IP 协议配套使用的还有三个协议：</p>
-<ul>
-<li>地址解析协议 ARP（Address Resolution Protocol）</li>
-<li>网际控制报文协议 ICMP（Internet Control Message Protocol）</li>
-<li>网际组管理协议 IGMP（Internet Group Management Protocol）</li>
-</ul>
-<p><a href="https://baike.baidu.com/item/协议数据单元/8226389" target="_blank" rel="noopener">协议数据单元</a>PDU（Protocol Data Unit）是指对等<a href="https://baike.baidu.com/item/层次/424052" target="_blank" rel="noopener">层次</a>之间传递的数据单位。 </p>
-<p>协议数据单元(Protocol Data Unit )</p>
-<p>物理层的 PDU是<a href="https://baike.baidu.com/item/数据位/3441892" target="_blank" rel="noopener">数据位</a>（bit）</p>
-<p><a href="https://baike.baidu.com/item/数据链路层/4329290" target="_blank" rel="noopener">数据链路层</a>的 PDU是<a href="https://baike.baidu.com/item/数据帧/10571824" target="_blank" rel="noopener">数据帧</a>（frame）</p>
-<p>网络层的PDU是<a href="https://baike.baidu.com/item/数据包/489739" target="_blank" rel="noopener">数据包</a>（packet）</p>
-<p><a href="https://baike.baidu.com/item/传输层/4329536" target="_blank" rel="noopener">传输层</a>的 PDU是<a href="https://baike.baidu.com/item/数据段/5136260" target="_blank" rel="noopener">数据段</a>（segment）</p>
-<p>其他更高层次的PDU是报文（message）</p>
-<h3 id="地址解析协议-ARP（Address-Resolution-Protocol）"><a href="#地址解析协议-ARP（Address-Resolution-Protocol）" class="headerlink" title="地址解析协议 ARP（Address Resolution Protocol）"></a>地址解析协议 ARP（Address Resolution Protocol）</h3><p>网络层实现主机之间的通信，而链路层实现具体每段链路之间的通信。因此在通信过程中，IP 数据报的源地址和目的地址始终不变，而 MAC 地址随着链路的改变而改变。</p>
-<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/66192382-558b-4b05-a35d-ac4a2b1a9811.jpg" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/notes/pics/66192382-558b-4b05-a35d-ac4a2b1a9811.jpg" alt="img"></a></p>
-<p>ARP 实现由 IP 地址得到 MAC 地址。</p>
-<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/b9d79a5a-e7af-499b-b989-f10483e71b8b.jpg" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/notes/pics/b9d79a5a-e7af-499b-b989-f10483e71b8b.jpg" alt="img"></a></p>
-<p>每个主机都有一个 ARP 高速缓存，里面有本局域网上的各主机和路由器的 IP 地址到 MAC 地址的映射表。</p>
-<p>如果主机 A 知道主机 B 的 IP 地址，但是 ARP 高速缓存中没有该 IP 地址到 MAC 地址的映射，此时主机 A 通过广播的方式发送 ARP 请求分组，主机 B 收到该请求后会发送 ARP 响应分组给主机 A 告知其 MAC 地址，随后主机 A 向其高速缓存中写入主机 B 的 IP 地址到 MAC 地址的映射。</p>
-<p>每个主机都有一个 ARP 高速缓存，里面有本局域网上的各主机和路由器的 IP 地址到 MAC 地址的映射表。</p>
-<p>如果主机 A 知道主机 B 的 IP 地址，但是 ARP 高速缓存中没有该 IP 地址到 MAC 地址的映射，此时主机 A 通过广播的方式发送 ARP 请求分组，主机 B 收到该请求后会发送 ARP 响应分组给主机 A 告知其 MAC 地址，随后主机 A 向其高速缓存中写入主机 B 的 IP 地址到 MAC 地址的映射。</p>
-<p><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/8006a450-6c2f-498c-a928-c927f758b1d0.png" target="_blank" rel="noopener"><img src="https://github.com/CyC2018/CS-Notes/raw/master/notes/pics/8006a450-6c2f-498c-a928-c927f758b1d0.png" alt="img"></a></p>
+        <p>原文 : <a href="https://www.cnblogs.com/zhyg6516/archive/2011/03/08/1977007.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhyg6516/archive/2011/03/08/1977007.html</a></p>
+<p>文章 深入讨论了  带有异常处理的,  函数栈级别的解释, 待深入整理</p>
+<p> NOTE： error handling</p>
+<p>\1. 当异常发生时，系统得到控制权，系统从FS:[0]寄存器取到异常处理链的头，以及异常的类型， 调用异常处理函数。（异常函数是编译器生成的）</p>
+<p>\2. 从链表头去匹配 异常类型和catch 块接收的类型。（ 这里用到RTTIRTTI（Run-Time Type Identification) 信息）</p>
+<p>\3. unwind stack。这里需要析构已经创建的对象。（ 这里需要判断析构哪些对象，这一步是编译器做的）</p>
+<p>\4. 执行catch 块代码。</p>
+<p>后返回到程序的正常代码，即catch块下面的第一行代码。</p>
+<blockquote>
+<p><strong>insert</strong> : 栈展开 / 内存泄露  ( 待单独整理</p>
+<p>因为栈展开的时候并不会自动对指针变量执行delete（或delete[]）操作</p>
+<p>因此，在有可能发生异常的函数中，在C++编程中，可以利用“智能指针”auto_ptr来防止内存泄露。参考如下程序</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line">&gt; <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;memory&gt;</span></span></span><br><span class="line">&gt; <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">&gt;   </span><br><span class="line">&gt; <span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line">&gt;     <span class="keyword">int</span> num;</span><br><span class="line">&gt; <span class="keyword">public</span>:</span><br><span class="line">&gt;     A(<span class="keyword">int</span> i):num(i)&#123;</span><br><span class="line">&gt;         <span class="built_in">cout</span>&lt;&lt;<span class="string">"this is A's constructor, num="</span>&lt;&lt;num&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;     ~A()&#123;</span><br><span class="line">&gt;         <span class="built_in">cout</span>&lt;&lt;<span class="string">"this is A's destructor, num="</span>&lt;&lt;num&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;     <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">&gt;         <span class="built_in">cout</span>&lt;&lt;num&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt; &#125;;</span><br><span class="line">&gt;   </span><br><span class="line">&gt; <span class="function"><span class="keyword">void</span> <span class="title">autoptrtest1</span><span class="params">()</span></span>&#123;</span><br><span class="line">&gt;     A* pa=<span class="keyword">new</span> A(<span class="number">1</span>);</span><br><span class="line">&gt;     <span class="keyword">throw</span> <span class="number">1</span>;</span><br><span class="line">&gt;     <span class="keyword">delete</span> pa;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;   </span><br><span class="line">&gt; <span class="function"><span class="keyword">void</span> <span class="title">autoptrtest2</span><span class="params">()</span></span>&#123;</span><br><span class="line">&gt;     <span class="built_in">auto_ptr</span>&lt;A&gt; pa(<span class="keyword">new</span> A(<span class="number">2</span>));</span><br><span class="line">&gt;     pa-&gt;show();</span><br><span class="line">&gt;     <span class="keyword">throw</span> <span class="number">2</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;   </span><br><span class="line">&gt; <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">&gt;     <span class="keyword">try</span>&#123;</span><br><span class="line">&gt;         autoptrtest1();</span><br><span class="line">&gt;     &#125;  </span><br><span class="line">&gt;     <span class="keyword">catch</span>(<span class="keyword">int</span>)&#123;</span><br><span class="line">&gt;         <span class="built_in">cout</span>&lt;&lt;<span class="string">"there is no destructor invoked"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;     <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&gt;     <span class="keyword">try</span>&#123;</span><br><span class="line">&gt;         autoptrtest2();</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;     <span class="keyword">catch</span>(<span class="keyword">int</span>)&#123;</span><br><span class="line">&gt;         <span class="built_in">cout</span>&lt;&lt;<span class="string">"A's destructor does be invoked"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;          </span><br><span class="line">&gt;          程序的输出结果：</span><br><span class="line">&gt; <span class="keyword">this</span> is A's constructor, num=<span class="number">1</span></span><br><span class="line">&gt; there is no destructor invoked</span><br><span class="line">&gt;   </span><br><span class="line">&gt; <span class="keyword">this</span> is A's constructor, num=<span class="number">2</span></span><br><span class="line">&gt; <span class="number">2</span></span><br><span class="line">&gt; <span class="keyword">this</span> is A's destructor, num=<span class="number">2</span></span><br><span class="line">&gt; A's destructor does be invoked</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>在解读上面的这段程序的时候，要注意以下几点。 [1] </p>
+<p>（1）在函数autoptrtest1()中，由于异常的发生，导致delete pa;无法执行，从而导致内存泄露。</p>
+<p>（2）auto_ptr实际上是一个类模板，在名称空间std中定义。要使用该类模板，必须包含头文件memory。auto_ptr的构造函数可以接受任何类型的指针，实际上是利用指针类型将该类模板实例化，并将传入的指针保存在auto_ptr<t>对象中。</t></p>
+<p>（3）在栈展开的过程中，auto_ptr<t>对象会被释放，从而导致auto_ptr<t>对象的析构函数被调用。在该析构函数中，将使用delete运算符将保存在该对象内的指针所指向的动态对象被销毁。这样，就不会发生内存泄露了。</t></t></p>
+<p>（4）由于已经对*和-&gt;操作符进行了重载，所以可以像使用普通的指针变量那样使用auto_ptr<t>对象，如上面程序中的pa-&gt;show()。这样可以保留使用指针的编程习惯，方便程序猿编写和维护。</t></p>
+</blockquote>
+<p>  可见，在exception 找到对应的 Catche 块后， 去栈展开（unwind stack），析构已有的对象后，进入到Catch 块中。 问题是： 程序怎么知道程序运行到哪里？ 哪些对象需要调用析构函数？ 这也是编译器做的，对于每一个Catch 块，其记录下如果该catch 块若被调用，哪些对象需要被析构。 这有这么一张表。具体实现可以参见reference2.</p>
 
       
     </div>
@@ -403,8 +379,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/22/cpp-note-pointer/" rel="next" title="cpp_note_pointer">
-                <i class="fa fa-chevron-left"></i> cpp_note_pointer
+              <a href="/2019/09/01/note-project-ship/" rel="next" title="note-project_ship">
+                <i class="fa fa-chevron-left"></i> note-project_ship
               </a>
             
           </div>
@@ -412,10 +388,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/24/Note-OS/" rel="prev" title="Note_OS">
-                Note_OS <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -467,17 +439,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -537,22 +500,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机网络体系结构"><span class="nav-number">1.</span> <span class="nav-text">计算机网络体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-五层协议"><span class="nav-number">1.1.</span> <span class="nav-text">1. 五层协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-OSI"><span class="nav-number">1.2.</span> <span class="nav-text">2. OSI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-TCP-IP"><span class="nav-number">1.3.</span> <span class="nav-text">3. TCP/IP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络层"><span class="nav-number">2.</span> <span class="nav-text">网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#地址解析协议-ARP（Address-Resolution-Protocol）"><span class="nav-number">2.0.1.</span> <span class="nav-text">地址解析协议 ARP（Address Resolution Protocol）</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

@@ -233,6 +233,180 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/02/note-cpp-Structure-Error-Handling/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shaw Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShawShaw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/02/note-cpp-Structure-Error-Handling/" itemprop="url">note-cpp-Structure-Error-Handling</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-02T23:05:29+08:00">
+                2019-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  916
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>原文 : <a href="https://www.cnblogs.com/zhyg6516/archive/2011/03/08/1977007.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhyg6516/archive/2011/03/08/1977007.html</a></p>
+<p>文章 深入讨论了  带有异常处理的,  函数栈级别的解释, 待深入整理</p>
+<p> NOTE： error handling</p>
+<p>\1. 当异常发生时，系统得到控制权，系统从FS:[0]寄存器取到异常处理链的头，以及异常的类型， 调用异常处理函数。（异常函数是编译器生成的）</p>
+<p>\2. 从链表头去匹配 异常类型和catch 块接收的类型。（ 这里用到RTTIRTTI（Run-Time Type Identification) 信息）</p>
+<p>\3. unwind stack。这里需要析构已经创建的对象。（ 这里需要判断析构哪些对象，这一步是编译器做的）</p>
+<p>\4. 执行catch 块代码。</p>
+<p>后返回到程序的正常代码，即catch块下面的第一行代码。</p>
+<blockquote>
+<p><strong>insert</strong> : 栈展开 / 内存泄露  ( 待单独整理</p>
+<p>因为栈展开的时候并不会自动对指针变量执行delete（或delete[]）操作</p>
+<p>因此，在有可能发生异常的函数中，在C++编程中，可以利用“智能指针”auto_ptr来防止内存泄露。参考如下程序</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line">&gt; <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;memory&gt;</span></span></span><br><span class="line">&gt; <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">&gt;   </span><br><span class="line">&gt; <span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line">&gt;     <span class="keyword">int</span> num;</span><br><span class="line">&gt; <span class="keyword">public</span>:</span><br><span class="line">&gt;     A(<span class="keyword">int</span> i):num(i)&#123;</span><br><span class="line">&gt;         <span class="built_in">cout</span>&lt;&lt;<span class="string">"this is A's constructor, num="</span>&lt;&lt;num&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;     ~A()&#123;</span><br><span class="line">&gt;         <span class="built_in">cout</span>&lt;&lt;<span class="string">"this is A's destructor, num="</span>&lt;&lt;num&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;     <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">&gt;         <span class="built_in">cout</span>&lt;&lt;num&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt; &#125;;</span><br><span class="line">&gt;   </span><br><span class="line">&gt; <span class="function"><span class="keyword">void</span> <span class="title">autoptrtest1</span><span class="params">()</span></span>&#123;</span><br><span class="line">&gt;     A* pa=<span class="keyword">new</span> A(<span class="number">1</span>);</span><br><span class="line">&gt;     <span class="keyword">throw</span> <span class="number">1</span>;</span><br><span class="line">&gt;     <span class="keyword">delete</span> pa;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;   </span><br><span class="line">&gt; <span class="function"><span class="keyword">void</span> <span class="title">autoptrtest2</span><span class="params">()</span></span>&#123;</span><br><span class="line">&gt;     <span class="built_in">auto_ptr</span>&lt;A&gt; pa(<span class="keyword">new</span> A(<span class="number">2</span>));</span><br><span class="line">&gt;     pa-&gt;show();</span><br><span class="line">&gt;     <span class="keyword">throw</span> <span class="number">2</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;   </span><br><span class="line">&gt; <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">&gt;     <span class="keyword">try</span>&#123;</span><br><span class="line">&gt;         autoptrtest1();</span><br><span class="line">&gt;     &#125;  </span><br><span class="line">&gt;     <span class="keyword">catch</span>(<span class="keyword">int</span>)&#123;</span><br><span class="line">&gt;         <span class="built_in">cout</span>&lt;&lt;<span class="string">"there is no destructor invoked"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;     <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&gt;     <span class="keyword">try</span>&#123;</span><br><span class="line">&gt;         autoptrtest2();</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;     <span class="keyword">catch</span>(<span class="keyword">int</span>)&#123;</span><br><span class="line">&gt;         <span class="built_in">cout</span>&lt;&lt;<span class="string">"A's destructor does be invoked"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;          </span><br><span class="line">&gt;          程序的输出结果：</span><br><span class="line">&gt; <span class="keyword">this</span> is A's constructor, num=<span class="number">1</span></span><br><span class="line">&gt; there is no destructor invoked</span><br><span class="line">&gt;   </span><br><span class="line">&gt; <span class="keyword">this</span> is A's constructor, num=<span class="number">2</span></span><br><span class="line">&gt; <span class="number">2</span></span><br><span class="line">&gt; <span class="keyword">this</span> is A's destructor, num=<span class="number">2</span></span><br><span class="line">&gt; A's destructor does be invoked</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>在解读上面的这段程序的时候，要注意以下几点。 [1] </p>
+<p>（1）在函数autoptrtest1()中，由于异常的发生，导致delete pa;无法执行，从而导致内存泄露。</p>
+<p>（2）auto_ptr实际上是一个类模板，在名称空间std中定义。要使用该类模板，必须包含头文件memory。auto_ptr的构造函数可以接受任何类型的指针，实际上是利用指针类型将该类模板实例化，并将传入的指针保存在auto_ptr<t>对象中。</t></p>
+<p>（3）在栈展开的过程中，auto_ptr<t>对象会被释放，从而导致auto_ptr<t>对象的析构函数被调用。在该析构函数中，将使用delete运算符将保存在该对象内的指针所指向的动态对象被销毁。这样，就不会发生内存泄露了。</t></t></p>
+<p>（4）由于已经对*和-&gt;操作符进行了重载，所以可以像使用普通的指针变量那样使用auto_ptr<t>对象，如上面程序中的pa-&gt;show()。这样可以保留使用指针的编程习惯，方便程序猿编写和维护。</t></p>
+</blockquote>
+<p>  可见，在exception 找到对应的 Catche 块后， 去栈展开（unwind stack），析构已有的对象后，进入到Catch 块中。 问题是： 程序怎么知道程序运行到哪里？ 哪些对象需要调用析构函数？ 这也是编译器做的，对于每一个Catch 块，其记录下如果该catch 块若被调用，哪些对象需要被析构。 这有这么一张表。具体实现可以参见reference2.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/01/note-project-ship/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -3003,171 +3177,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/22/Note-Zsh/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shaw Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShawShaw">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/22/Note-Zsh/" itemprop="url">Note:Zsh</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-22T10:48:16+08:00">
-                2019-06-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  199
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>zsh 使用tips</p>
-<h4 id="zsh没有help"><a href="#zsh没有help" class="headerlink" title="zsh没有help"></a>zsh没有help</h4><p>bash 中 help cat</p>
-<p>zsh 中 cat - <tab></tab></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">☁  <span class="built_in">source</span>  cat -</span><br><span class="line">-b  -- number non-blank output lines</span><br><span class="line">-e  -- display $ at the end of each line (implies -v)</span><br><span class="line">-n  -- number all output lines</span><br><span class="line">-s  -- squeeze multiple blank lines into one</span><br><span class="line">-t  -- display tab as ^I (implies -v)</span><br><span class="line">-u  -- <span class="keyword">do</span> not buffer output</span><br><span class="line">-v  -- display non-printing chars as ^X or M<span class="_">-a</span></span><br></pre></td></tr></table></figure>
-<p>还能双击<tab> </tab></p>
-<h4 id="zsh-目录短语"><a href="#zsh-目录短语" class="headerlink" title="zsh 目录短语"></a>zsh 目录短语</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">☁  <span class="built_in">source</span>  <span class="built_in">alias</span> | grep <span class="built_in">cd</span></span><br><span class="line">-=<span class="string">'cd -'</span></span><br><span class="line">1=<span class="string">'cd -'</span></span><br><span class="line">2=<span class="string">'cd -2'</span></span><br><span class="line">3=<span class="string">'cd -3'</span></span><br><span class="line">4=<span class="string">'cd -4'</span></span><br><span class="line">5=<span class="string">'cd -5'</span></span><br><span class="line">6=<span class="string">'cd -6'</span></span><br><span class="line">7=<span class="string">'cd -7'</span></span><br><span class="line">8=<span class="string">'cd -8'</span></span><br><span class="line">9=<span class="string">'cd -9'</span></span><br></pre></td></tr></table></figure>
-<h4 id="zsh-通配符-找目录下文件"><a href="#zsh-通配符-找目录下文件" class="headerlink" title="zsh 通配符 找目录下文件"></a>zsh 通配符 找目录下文件</h4><blockquote>
-<p>通配符和正则表达式?</p>
-<p>通配符只有shell解析来匹配文件名 比如find ls cp mv</p>
-<p>正则匹配文本, grep</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">☁  _posts  ls *.md</span><br><span class="line">ANN(Approximate Nearest  Neighbor)  Search.md</span><br><span class="line">Markdown-Latex-Signs.md</span><br><span class="line">Note-Japanese-Std.md</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">☁  _posts  grep -E <span class="string">"\&lt;shell\&gt;"</span> Note-Zsh.md</span><br><span class="line">&gt; 通配符只有shell解析来匹配文件名 比如find ls cp mv</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3218,7 +3227,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
